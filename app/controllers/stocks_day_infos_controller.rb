@@ -1,0 +1,2 @@
+class StocksDayInfosController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class FollowedStocksController < ApplicationController
+end
