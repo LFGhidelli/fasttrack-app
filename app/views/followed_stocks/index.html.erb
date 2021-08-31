@@ -1,0 +1,6 @@
+<ul>
+  <% @followedstocks.each do |stock| %>
+    <li><%= stock.name %></li>
+  <% end %>
+</ul>
+<%= link_to "Follow a new stock ", new_followed_stock_path(@followedstock), class: "btn"%>
