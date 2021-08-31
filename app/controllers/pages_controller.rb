@@ -18,6 +18,5 @@ class PagesController < ApplicationController
       end
       @stock_total_value[stock_id] = { total_value: total_value, total_amount: total_amount }
     end
-
   end
 end
