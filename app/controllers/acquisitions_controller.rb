@@ -1,19 +1,15 @@
 class AcquisitionsController < ApplicationController
   def new
-    @stock = stock.find(params[:stock_id])
     @acquisition = Acquisition.new
     @acquisition.stock = @stock
-    authorize @acquisition
+    # authorize @acquisition
   end
 
   def create
     @acquisition = Acquisition.new(acquisition_params)
-    @stock = stock.find(params[:stock_id])
-    @acquisition.stock = @stock
     @acquisition.user = current_user
-    authorize @stock
-    authorize @acquisition
-
+    # authorize @stock
+    # authorize @acquisition
     if @acquisition.save
       redirect_to stock_acquisition_path(@acquisition.id, @stock.id), notice: 'your acquisition has been sent!'
     else

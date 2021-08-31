@@ -1,10 +1,11 @@
 class FollowedStocksController < ApplicationController
   def index
-    @followedstocks = FollowedStock.all
+    @followedstocks = current_user.followed_stocks
   end
 
   def new
     @followedstock = FollowedStock.new
+    @stocks = Stock.all
   end
 
   def create
