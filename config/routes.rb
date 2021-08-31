@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :stocks do
     resources :acquistions, only: [:new, :create, :update]
   end
-  resources :followed_stocks
+  resources :followed_stocks, except: [:update, :edit]
   get "dashboard", to: "pages#dashboard"
   get "portfolio", to: "pages#portfolio"
 end
