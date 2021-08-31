@@ -40,7 +40,8 @@ end
 puts "Creating Followed Stocks"
 
 10.times do
-  FollowedStock.create!(stock: stocks[rand(1...4)], user: users[rand(1...4)], name: Faker::Name.name)
+  FollowedStock.create(stock: stocks[rand(1...4)], user: users.sample)
+  puts "ok"
 end
 
 puts "Creating Acquisitions"
