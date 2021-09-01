@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_101709) do
+ActiveRecord::Schema.define(version: 2021_09_01_144843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2021_09_01_101709) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["stock_id"], name: "index_acquisitions_on_stock_id"
     t.index ["user_id"], name: "index_acquisitions_on_user_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.text "content"
+    t.string "title"
+    t.date "date_published"
+    t.bigint "stock_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["stock_id"], name: "index_articles_on_stock_id"
   end
 
   create_table "followed_stocks", force: :cascade do |t|
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_101709) do
 
   add_foreign_key "acquisitions", "stocks"
   add_foreign_key "acquisitions", "users"
+  add_foreign_key "articles", "stocks"
   add_foreign_key "followed_stocks", "stocks"
   add_foreign_key "followed_stocks", "users"
   add_foreign_key "stock_day_infos", "stocks"
