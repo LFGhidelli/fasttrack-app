@@ -1,15 +1,13 @@
 class FollowedStocksController < ApplicationController
   def index
     @followedstocks = current_user.followed_stocks
-  end
-
-  def new
     @followedstock = FollowedStock.new
     @stocks = Stock.all
   end
 
   def create
     @followedstock = FollowedStock.new(followedstock_params)
+    @followedstock.user = current_user
     @followedstock.save
     if @followedstock.save
       redirect_to followed_stocks_path(@followedstock)
@@ -31,6 +29,6 @@ class FollowedStocksController < ApplicationController
   private
 
   def followedstock_params
-    params.require(:followedstock).permit(:name)
+    params.require(:followed_stock).permit(:stock_id)
   end
 end

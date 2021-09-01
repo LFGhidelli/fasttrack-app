@@ -3,4 +3,33 @@
     <li><%= stock.stock.name %></li>
   <% end %>
 </ul>
-<%= link_to "Follow a new stock ", new_followed_stock_path(@followedstock), class: "btn"%>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#followmodal">
+  Add a stock
+</button>
+
+<!-- followModal -->
+<div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="followmodalLabel">Stock</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@followedstock) do |f| %>
+          <%= f.association :stock, input_html: { class: 'select2' }  %>
+        <div class="modal-footer">
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
