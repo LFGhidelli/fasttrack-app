@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @acquisitions = current_user.acquisitions
     @grouped_acquisitions = @acquisitions.group_by(&:stock_id)
     @stock_total_value = {}
+    @acquisition = Acquisition.new
     @grouped_acquisitions.each do |stock_id, acquisition_array|
       total_money_value = 0
       total_stock_count = 0
