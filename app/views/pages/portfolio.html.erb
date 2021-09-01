@@ -1,1 +1,5 @@
-<%= @stock_total_value[7] %>
+<% @stock_total_value.each do |key, value| %>
+<%= Stock.find(key).name %>
+<%= value[:total] %>
+<br>
+<% end %>
