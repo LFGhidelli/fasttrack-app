@@ -11,7 +11,7 @@ class AcquisitionsController < ApplicationController
     # authorize @stock
     # authorize @acquisition
     if @acquisition.save
-      redirect_to stock_acquisition_path(@acquisition.id, @stock.id), notice: 'your acquisition has been sent!'
+      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'your acquisition has been sent!'
     else
       render :new
     end
@@ -26,6 +26,6 @@ class AcquisitionsController < ApplicationController
   private
 
   def acquisition_params
-    params.require(:acquisition).permit(:value_bought, :amount_bought, :date_bought)
+    params.require(:acquisition).permit(:value_bought, :amount_bought, :stock_id)
   end
 end

@@ -42,7 +42,7 @@ puts "Creating Stock Day Info"
 
 10.times do
   stock = stocks[rand(1...4)]
-  StockDayInfo.create!(stock: stock, closing_price: rand(1..100), closing_date: Faker::Date.in_date_period)
+  StockDayInfo.create!(stock: stock, latest_price: rand(1..100))
 end
 
 puts "Creating Followed Stocks"
