@@ -1,8 +1,10 @@
+
 <% @stock_total_value.each do |key, value| %>
 <%= Stock.find(key).name %>
 <%= value[:total] %>
 <br>
 <% end %>
+
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add a stock
@@ -13,18 +15,25 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Stock</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-        <button type="button" class="btn btn-primary">Add Stock</button>
+        <%= simple_form_for(@acquisition) do |f| %>
+        <div class="form-inputs">
+          <%= f.association :stock, input_html: { class: 'select2' }  %>
+          <%= f.input :value_bought, :label => "Purchase price" %>
+          <%= f.input :amount_bought, :label => "Amount bought" %>
+        <div class="modal-footer">
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
+</div>
 </div>
