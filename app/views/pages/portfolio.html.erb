@@ -44,17 +44,17 @@
 
 
 <%# VICTOR'S WORK %>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#buymodal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add a stock
 </button>
 
-<!-- BuyModal -->
-<div class="modal fade" id="buymodal" tabindex="-1" role="dialog" aria-labelledby="buymodalLabel"
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="buymodalLabel">Stock</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Stock</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -65,11 +65,10 @@
           <%= f.association :stock, input_html: { class: 'select2' }  %>
           <%= f.input :value_bought, :label => "Purchase price" %>
           <%= f.input :amount_bought, :label => "Amount bought" %>
-          <%= f.input :date_bought, as: :date, :label => "date of purchase" %>
-        <div class="modal-footer">
-          <div class="form-actions">
-            <%= f.button :submit %>
-        </div>
+          <div class="modal-footer">
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
           </div>
           <% end %>
         </div>
