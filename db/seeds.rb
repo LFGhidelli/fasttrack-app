@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+client = IEX::Api::Client.new(
+  publishable_token: ENV['IEX_API_PUBLISHABLE_TOKEN'],
+  secret_token: ENV['IEX_API_SECRET_TOKEN'],
+  endpoint: 'https://cloud.iexapis.com/v1'
+)
+
+
 puts 'Clearing the database'
 
 StockDayInfo.destroy_all
@@ -34,7 +41,8 @@ stocks = [tsla, amazon, googl, facebook]
 puts "Creating Stock Day Info"
 
 10.times do
-  StockDayInfo.create!(stock: stocks[rand(1...4)], closing_price: rand(1..100), closing_date: Faker::Date.in_date_period)
+  stock = stocks[rand(1...4)]
+  StockDayInfo.create!(stock: stock, closing_price: rand(1..100), closing_date: Faker::Date.in_date_period)
 end
 
 puts "Creating Followed Stocks"
