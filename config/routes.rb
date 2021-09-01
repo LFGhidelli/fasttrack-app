@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :followed_stocks, except: [:update, :edit]
   get "dashboard", to: "pages#dashboard"
   get "portfolio", to: "pages#portfolio"
+  get "articles/news", to: "articles#new"
+  get "articles/:id", to: "articles#show"
 end
