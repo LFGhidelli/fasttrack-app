@@ -2,6 +2,12 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    @client = IEX::Api::Client.new
+    @testclient = IEX::Api::Client.new(
+      publishable_token: 'pk_44b3db4eecfd4104b95aad7b4e595236',
+      secret_token: 'sk_07ff8fe366e04362a736800330e4f52b',
+      endpoint: 'https://cloud.iexapis.com/v1'
+    )
   end
 
   def portfolio
