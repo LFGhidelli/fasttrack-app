@@ -1,15 +1,55 @@
 <% @stock_total_value.each do |key, value| %>
 <%= Stock.find(key).name %>
-<%= value[:total] %>
+<%= value[:total_money_value] %>
+<%= value[:total_stock_count] %>
 <br>
 <% end %>
+
+
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Table Style</title>
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body class="table_body">
+  <div class="table-title">
+    <h3>Overview</h3>
+  </div>
+  <table class="table-fill">
+    <thead>
+      <tr>
+        <th class="text-left">Stock</th>
+        <th class="text-left">Amount</th>
+        <th class="text-left">Value</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <% @stock_total_value.each do |key, value| %>
+        <tr>
+          <td class="text-left"><%= Stock.find(key).name %></td>
+          <td class="text-left"><%= value[:total_stock_count] %></td>
+          <td class="text-left">$<%= value[:total_money_value] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</body>
+
+
+
+<%# VICTOR'S WORK %>
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add a stock
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
