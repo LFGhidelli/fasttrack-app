@@ -1,28 +1,78 @@
+<body class="table_body">
+  <div class="table-title">
+    <h3 class="mt-5">Overview</h3>
+  </div>
+  <table class="table-fill">
+    <thead>
+      <tr>
+        <th class="text-left">Stock</th>
+        <th class="text-left">Amount</th>
+        <th class="text-left">Your Cost</th>
+        <th class="text-left">Current Value</th>
+        <th class="text-left">Net</th>
+        <th class="text-left">P/L</th>
+        <th class="text-left"></th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+      <% @stock_total_value.each do |key, value| %>
+      <tr>
+        <td class="text-left"><%= Stock.find(key).name %></td>
+        <td class="text-left"><%= value[:total_stock_count] %></td>
+        <td class="text-left">$<%= value[:total_money_value] %></td>
+        <td class="text-left">$<%= value[:market_value] %></td>
+        <% net = value[:market_value]-value[:total_money_value] %>
+        <td class="text-left">$<%= net.round(1) %></td>
+        <% net_percent = (net/value[:total_money_value])*100 %>
+        <td class="text-left"><%= net_percent.round(1)%>%</td>
+        <td><a href="#" id="show_<%=key%>" class="show-extra" data-id="<%=key%>">▼</a></td>
+      </tr>
 
+      <tr>
+        <td colspan="5" id="extra_<%=key%>" class="d-none">
+          <br>hidden row
+          <br>hidden row
+          <br>hidden row
+        </td>
+      </tr>
+
+      <% end %>
+    </tbody>
+  </table>
+</body>
+
+
+
+<%# VICTOR'S WORK %>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add a stock
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Stock</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-        <button type="button" class="btn btn-primary">Add Stock</button>
+        <%= simple_form_for(@acquisition) do |f| %>
+        <div class="form-inputs">
+          <%= f.association :stock, input_html: { class: 'select2' }  %>
+          <%= f.input :value_bought, :label => "Purchase price" %>
+          <%= f.input :amount_bought, :label => "Amount bought" %>
+          <div class="modal-footer">
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-<%= @stock_total_value[7] %>
-

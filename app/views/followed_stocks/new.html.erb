@@ -1,6 +1,6 @@
 <ul>
   <% @stocks.each do |stock| %>
     <li><%= stock.name %></li>
-    <%= link_to " Follow ", new_followed_stock_path(@followedstock), class: "btn"%>
+    <%= link_to new_followed_stock_path(@followedstock), class: "btn"%>
   <% end %>
 </ul>
