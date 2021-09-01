@@ -1,6 +1,7 @@
 <ul>
   <% @followedstocks.each do |stock| %>
     <li><%= stock.stock.name %></li>
+    <%#= link_to "Delete", @followedstock, method: :delete, data: { confirm: "Are you sure you want to delete #{@stock.name}?" }, class: "btn" %>
   <% end %>
 </ul>
 <%= link_to "Follow a new stock ", new_followed_stock_path(@followedstock), class: "btn"%>

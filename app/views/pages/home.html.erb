@@ -1,11 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<% apple = @testclient.quote('AAPL') %>
-<%= @testclient.chart("AAPL") %>
-NAME: <%= apple.company_name %> <br>
-Latest Price: <%= apple.latest_price %><br>
-Previous Close: <%= apple.previous_close %><br>
-1 Day Change: <%= apple.change_percent*100 %>%<br>
-Yearly Change: <%= apple.ytd_change*100 %>%<br>
-52 Week High: <%= apple.week_52_high %><br>
-52 Week Low: <%= apple.week_52_low %><br>
+<body>
+  <div class="header_homepage">
+    <h1>Fast track</h1>
+    <p>the ultimate stocks & equity tracker app. Keep track of all stocks spanning global markets such as Nasdaq, NYSE, Eurnext, HKEX and more.</p>
+    <%# <img clas="logo" src="https://www.freeiconspng.com/thumbs/amazon-icon/amazon-icon--socialmedia-iconset--uiconstock-0.png" alt="">
+    <img clas="logo" src="https://iconape.com/wp-content/png_logo_vector/cib-tesla.png" alt="">
+    <img clas="logo" src="https://www.carstock.be/media/xfvmfngx/carstock-audi-logo-350-270.png" alt="">
+    <img clas="logo" src="https://www.seekpng.com/png/full/133-1334167_png-freeuse-stock-collection-of-bird-transparent-background.png" alt="">
+    <img clas="logo" src="" alt="">
+    <img clas="logo" src="" alt="">
+    <img clas="logo" src="" alt=""> %>
+  </div>
+  <div class="all_cards">
+    <div class="cards">
+      <img clas="cards_img" src="" alt="">
+      <p class="text_card">Set up customized news to stay on top of your assets as casually or as relentlessly as you like</p>
+    </div>
+    <div class="cards">
+      <img clas="cards_img" src="" alt="">
+      <p class="text_card">Invest in stocks with 0% commission</p>
+    </div >
+    <div class="cards">
+      <img clas="cards_img" src="" alt="">
+      <p class="text_card">The perfect app for new and experienced traders</p>
+    </div>
+  </div>
+  <div class="mid_container">
+    <div class="text_image_below">
+      <div class="image_below_first">
+        <img
+          src=https://blog.hubspot.com/hs-fs/hubfs/facebook-cover-photo-dimensions.jpg?width=690&name=facebook-cover-photo-dimensions.jpg""
+          alt="">
+      </div>
+      <div class="text_below">
+        <h1>Something</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+    </div>
+    <div class="text_image_below">
+      <div class="text_below">
+        <h1>Something</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      </div>
+      <div class="image_below_first">
+        <img
+          src=https://blog.hubspot.com/hs-fs/hubfs/facebook-cover-photo-dimensions.jpg?width=690&name=facebook-cover-photo-dimensions.jpg""
+          alt="">
+      </div>
+    </div>
+  </div>
+
+</body>
