@@ -1,3 +1,11 @@
+
+<% @stock_total_value.each do |key, value| %>
+<%= Stock.find(key).name %>
+<%= value[:total] %>
+<br>
+<% end %>
+
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Add a stock
 </button>
@@ -27,4 +35,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
