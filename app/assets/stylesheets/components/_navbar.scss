@@ -1,12 +1,92 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+
+:root {
+  --sidebar-email: #2b2b2b;
+  --sidebar-texts: #2b2b2b;
+  --dk-darker-bg: #434343;
+  --navbar-bg-color: #f3ece9;
+  --sidebar-bg-color: #f3ece9;
+  --sidebar-width: 250px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: .925rem;
+  background: rgb(67, 67, 67);
+  background: linear-gradient(90deg, rgb(185, 185, 185) 0%, rgb(196, 196, 196) 35%, rgb(209, 209, 209) 100%);
+}
+
+#wrapper {
+  margin-left: var(--sidebar-width);
+  transition: all .3s ease-in-out;
+}
+
+#wrapper.fullwidth {
+  margin-left: 0;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  width: var(--sidebar-width);
+  transition: all .3s ease-in-out;
+  transform: translateX(0);
+  z-index: 9999999
+}
+
+.sidebar .close-aside {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+  color: #EEE;
+}
+
+.sidebar .sidebar-header {
+  border-bottom: 1px solid #2a2b3c
+}
+
+.sidebar .sidebar-header h5 a {
+  color: var(--sidebar-email)
+}
+
+.sidebar .sidebar-header p {
+  color: var(--sidebar-texts);
+  font-size: .825rem;
+}
+
+.sidebar .search .form-control~i {
+  color: #2b2f3a;
+  right: 40px;
+  top: 22px;
+}
+
+.sidebar>ul>li {
+  padding: .7rem 1.75rem;
+}
+
+.sidebar ul>li>a {
+  color: var(--sidebar-texts);
+  text-decoration: none;
+}
+
+.welcome {
+  color: var(--sidebar-email);
+}
+
+.welcome p {
+  color: var(--sidebar-texts);
+}
+
+.navbar {
+  background-color: var(--navbar-bg-color) !important;
+  border: none !important;
+}
+
+.navbar .navbar-brand {
+  color: rgb(44, 44, 44) !important
 }
