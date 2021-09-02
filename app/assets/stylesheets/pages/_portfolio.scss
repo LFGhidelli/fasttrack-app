@@ -35,7 +35,7 @@ div.table-title {
   background: white;
   border-radius: 3px;
   border-collapse: collapse;
-  height: 320px;
+  height: 40px;
   margin: auto;
   max-width: 900px;
   padding: 5px;
@@ -45,11 +45,10 @@ div.table-title {
 }
 
 th {
-  color: #D5DDE5;
-  ;
-  background: #1b1e24;
-  border-bottom: 4px solid #9ea7af;
-  border-right: 1px solid #343a45;
+  color: #f9fcff;
+  background: #14121E;
+  border-bottom: 4px solid #5C538A;
+  border-right: 1px solid #ffffff;
   font-size: 23px;
   font-weight: 100;
   padding: 24px;
@@ -96,11 +95,11 @@ tr:last-child {
 }
 
 tr:nth-child(odd) td {
-  background: #EBEBEB;
+  background: #f0f0f0;
 }
 
 tr:nth-child(odd):hover td {
-  background: #4E5066;
+  background: #484360;
 }
 
 tr:last-child td:first-child {
@@ -148,4 +147,25 @@ td.text-center {
 
 td.text-right {
   text-align: right;
+}
+
+.profit-text {
+  font-weight: bold;
+  color: #48A14D;
+  text-shadow: none;
+}
+
+.loss-text {
+  font-weight: bold;
+  color: #B33F40;
+  text-shadow: none;
+}
+
+.down-arrow{
+  color: #13121E;
+  font-size: 22px;
+}
+
+.down-arrow:hover {
+  color: #fcfbff;
 }

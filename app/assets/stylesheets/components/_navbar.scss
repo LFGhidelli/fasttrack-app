@@ -1,11 +1,11 @@
 
 :root {
-  --sidebar-email: #2b2b2b;
-  --sidebar-texts: #2b2b2b;
+  --sidebar-email: #14121E;
+  --sidebar-texts: #14121E;
   --dk-darker-bg: #434343;
-  --navbar-bg-color: #f3ece9;
-  --sidebar-bg-color: #f3ece9;
-  --sidebar-width: 250px;
+  --navbar-bg-color: #F6F4F5;
+  --sidebar-bg-color: #F6F4F5;
+  --sidebar-width: 280px;
 }
 
 * {
@@ -17,8 +17,7 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: .925rem;
-  background: rgb(67, 67, 67);
-  background: linear-gradient(90deg, rgb(185, 185, 185) 0%, rgb(196, 196, 196) 35%, rgb(209, 209, 209) 100%);
+  background: #FFFFFF;
 }
 
 #wrapper {
