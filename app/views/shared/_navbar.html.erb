@@ -1,5 +1,8 @@
 <% if user_signed_in? %>
   <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+  <div class="d-flex justify-content-center mt-3 mb-1">
+  <img src="https://i.ibb.co/hy5mT8R/logo.png" alt="FastTrack Logo" width="60" height="60">
+  </div>
     <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
       <img class="rounded-pill img-fluid" width="65"
         src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
@@ -8,7 +11,7 @@
         <h5 class="fs-6 mb-0">
           <a class="text-decoration-none" href="#"><%= current_user.email %></a>
         </h5>
-        <p class="mt-1 mb-0">Welcome to FastTrack!</p>
+        <%= link_to "Logout", destroy_user_session_path, class:"logout-button mt-1 mb-0"%>
       </div>
     </div>
 
@@ -19,10 +22,7 @@
 
     <ul class="categories list-unstyled">
       <li class="">
-        <i class="uil-folder"></i><a href="#"><i class="fas fa-home"></i> <%= link_to "Homepage", root_path %></a>
-      </li>
-      <li class="">
-        <i class="uil-folder"></i><a href="#"><i class="fas fa-columns"></i>
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-home"></i>
           <%= link_to "Dashboard", dashboard_path %></a>
       </li>
       <li class="">

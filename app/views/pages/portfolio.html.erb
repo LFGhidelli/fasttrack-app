@@ -19,13 +19,25 @@
       <tr>
         <td class="text-left"><%= Stock.find(key).name %></td>
         <td class="text-left"><%= value[:total_stock_count] %></td>
-        <td class="text-left">$<%= value[:total_money_value] %></td>
-        <td class="text-left">$<%= value[:market_value] %></td>
+        <td class="text-left"><%= number_to_currency(value[:total_money_value]) %></td>
+        <td class="text-left"><%= number_to_currency(value[:market_value]) %></td>
+
+
+
         <% net = value[:market_value]-value[:total_money_value] %>
-        <td class="text-left">$<%= net.round(1) %></td>
         <% net_percent = (net/value[:total_money_value])*100 %>
-        <td class="text-left"><%= net_percent.round(1)%>%</td>
-        <td><a href="#" id="show_<%=key%>" class="show-extra" data-id="<%=key%>">▼</a></td>
+        <% if net > 0 %>
+          <td class="text-left profit-text"><%= number_to_currency(net.round(1)) %></td>
+          <% net_percent = (net/value[:total_money_value])*100 %>
+          <td class="text-left profit-text"><%= net_percent.round(1)%>%</td>
+        <% else %>
+          <td class="text-left loss-text"><%= number_to_currency(net.round(1)) %></td>
+          <td class="text-left loss-text"><%= net_percent.round(1)%>%</td>
+        <% end %>
+
+
+
+        <td><a href="#" id="show_<%=key%>" class="show-extra down-arrow" data-id="<%=key%>">▼</a></td>
       </tr>
 
       <tr class="expanded-row">
