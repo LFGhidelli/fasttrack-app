@@ -1,48 +1,53 @@
-<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
-  <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
-    <img class="rounded-pill img-fluid" width="65"
-      src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
-      alt="">
-    <div class="ms-2 ml-1">
-      <h5 class="fs-6 mb-0">
-        <a class="text-decoration-none" href="#"><%= current_user.email %></a>
-      </h5>
-      <p class="mt-1 mb-0">Welcome to FastTrack!</p>
-    </div>
-  </div>
-
-  <div class="search position-relative text-center px-4 py-3 mt-2">
-    <input type="text" class="form-control w-100 border-0 bg-transparent" placeholder="Search here">
-    <i class="fa fa-search position-absolute d-block fs-6"></i>
-  </div>
-
-  <ul class="categories list-unstyled">
-    <li class="">
-      <i class="uil-folder"></i><a href="#"><i class="fas fa-home"></i> <%= link_to "Homepage", root_path %></a>
-    </li>
-    <li class="">
-      <i class="uil-folder"></i><a href="#"><i class="fas fa-columns"></i>
-        <%= link_to "Dashboard", dashboard_path %></a>
-    </li>
-    <li class="">
-      <i class="uil-folder"></i><a href="#"><i class="fas fa-chart-line"></i>
-        <%= link_to "Your Portfolio", portfolio_path %></a>
-    </li>
-    <li class="">
-      <i class="uil-folder"></i><a href="#"><i class="fas fa-eye"></i>
-        <%= link_to "Followed Stocks", followed_stocks_path %></a>
-    </li>
-    <li class="">
-      <i class="uil-folder"></i><a href="#"><i class="fas fa-newspaper"></i>
-        <%= link_to "News", articles_news_path %></a>
-    </li>
-  </ul>
-</aside>
-
-<section id="wrapper">
-  <nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <img src="https://i.ibb.co/WsBSVjQ/logo2.png" alt="Girl in a jacket" width="120">
+<% if user_signed_in? %>
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img class="rounded-pill img-fluid" width="65"
+        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+        alt="">
+      <div class="ms-2 ml-1">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="#"><%= current_user.email %></a>
+        </h5>
+        <p class="mt-1 mb-0">Welcome to FastTrack!</p>
       </div>
-  </nav>
+    </div>
+
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+      <input type="text" class="form-control w-100 border-0 bg-transparent" placeholder="Search here">
+      <i class="fa fa-search position-absolute d-block fs-6"></i>
+    </div>
+
+    <ul class="categories list-unstyled">
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-home"></i> <%= link_to "Homepage", root_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-columns"></i>
+          <%= link_to "Dashboard", dashboard_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-chart-line"></i>
+          <%= link_to "Your Portfolio", portfolio_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-eye"></i>
+          <%= link_to "Followed Stocks", followed_stocks_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-newspaper"></i>
+          <%= link_to "News", articles_news_path %></a>
+      </li>
+    </ul>
+  </aside>
+
+  <section id="wrapper">
+<% else %>
+    <section id="guest-wrapper">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <img src="https://i.ibb.co/WsBSVjQ/logo2.png" alt="FastTrack Logo" width="120">
+          <div class="guest-navbar">
+            <%= link_to "Login", new_user_session_path, class:"login-button"%>
+          </div>
+      </nav>
+<% end %>

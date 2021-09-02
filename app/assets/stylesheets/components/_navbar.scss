@@ -23,7 +23,10 @@ body {
 
 #wrapper {
   margin-left: var(--sidebar-width);
-  transition: all .3s ease-in-out;
+}
+
+#guest-wrapper{
+  margin-left: none;
 }
 
 #wrapper.fullwidth {
@@ -35,7 +38,7 @@ body {
   width: var(--sidebar-width);
   transition: all .3s ease-in-out;
   transform: translateX(0);
-  z-index: 9999999
+  z-index: 9999999;
 }
 
 .sidebar .close-aside {
@@ -87,6 +90,12 @@ body {
   border: none !important;
 }
 
+.guest-navbar {
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  flex-grow: 0;
+}
 .navbar .navbar-brand {
   color: rgb(44, 44, 44) !important
 }
