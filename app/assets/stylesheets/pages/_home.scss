@@ -1,14 +1,100 @@
 // Specific CSS for your home-page
 @import url(‘http://fonts.cdnfonts.com/css/segoe-ui-4’);
+
 //background header
 body {
   font-family: "Segoe UI", sans-serif;
 }
+
+.the_all_thing {
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(35, 38, 45, 1) 13%,
+    rgba(78, 80, 102, 1) 48%,
+    rgba(28, 30, 35, 1) 93%
+  );
+}
+
 .header_homepage {
+  width: 1300px;
   height: 600px;
   background-color: #1c1e23;
-  color: rgb(203, 196, 196);
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  justify-content: space-between;
 }
+
+.text_header {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  padding-left: 50px;
+  width: 362px;
+}
+
+.inner_text_header {
+  font-size: 4.2em;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 40px;
+}
+
+// .amz_logo {
+//   width: 70px;
+//   height: 58px;
+//   position: relative;
+//   left: 478px;
+//   top: 75px;
+// }
+
+// .tsl_logo {
+//   width: 90px;
+//   height: 100px;
+//   position: relative;
+//   left: 308px;
+//   bottom: -81px;
+// }
+
+// .fb_logo {
+//   width: 100px;
+//   height: 60px;
+//   position: relative;
+//   bottom: 50px;
+//   left: 114px;
+// }
+
+// .tw_logo {
+//   width: 100px;
+//   height: 90px;
+//   position: relative;
+//   left: 7px;
+//   top: 0px;
+// }
+
+// .audi_logo {
+//   width: 125px;
+//   height: 100px;
+//   position: relative;
+//   left: 266px;
+// }
+// .gm_logo {
+//   width: 20px;
+//   height: 20px;
+//   position: relative;
+// }
+// .microsoft_logo {
+//   top: -64px;
+//   width: 140px;
+//   height: 75px;
+//   position: relative;
+//   right: 182px;
+// }
 
 // button of le turfu
 // .span_homepage {
@@ -56,14 +142,11 @@ body {
 // cards just below the header
 .all_cards {
   display: flex;
+  padding-top: 70px;
   height: 450px;
   width: 100%;
   justify-content: space-around;
   align-items: center;
-}
-
-.logo {
-  width: 20%;
 }
 
 .cards {
@@ -90,6 +173,24 @@ body {
   height: 40px;
 }
 
+.cards_img_1st {
+  height: 150px;
+  margin-top: 26px;
+}
+
+.zero_card {
+  font-size: 5.5rem;
+}
+
+.cards_img_2nd {
+  height: 145px;
+}
+
+.text_second_card {
+  position: relative;
+  top: 24px;
+}
+
 // text & image below
 
 .text_image_below {
@@ -102,10 +203,23 @@ body {
   display: flex;
 }
 
+.image_below_two {
+  display: flex;
+}
+
+.big_image_one {
+  width: 100%;
+}
+
+.big_image_two {
+  width: 100%;
+}
+
 .text_below {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 76px;
 }
 
 .mid_container {
