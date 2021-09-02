@@ -1,35 +1,53 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<% if user_signed_in? %>
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img class="rounded-pill img-fluid" width="65"
+        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+        alt="">
+      <div class="ms-2 ml-1">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" href="#"><%= current_user.email %></a>
+        </h5>
+        <p class="mt-1 mb-0">Welcome to FastTrack!</p>
+      </div>
+    </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+      <input type="text" class="form-control w-100 border-0 bg-transparent" placeholder="Search here">
+      <i class="fa fa-search position-absolute d-block fs-6"></i>
+    </div>
 
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
+    <ul class="categories list-unstyled">
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-home"></i> <%= link_to "Homepage", root_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-columns"></i>
+          <%= link_to "Dashboard", dashboard_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-chart-line"></i>
+          <%= link_to "Your Portfolio", portfolio_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-eye"></i>
+          <%= link_to "Followed Stocks", followed_stocks_path %></a>
+      </li>
+      <li class="">
+        <i class="uil-folder"></i><a href="#"><i class="fas fa-newspaper"></i>
+          <%= link_to "News", articles_news_path %></a>
+      </li>
     </ul>
-  </div>
-</div>
+  </aside>
+
+  <section id="wrapper">
+<% else %>
+    <section id="guest-wrapper">
+      <nav class="navbar">
+        <div class="container-fluid">
+          <img src="https://i.ibb.co/WsBSVjQ/logo2.png" alt="FastTrack Logo" width="120">
+          <div class="guest-navbar">
+            <%= link_to "Login", new_user_session_path, class:"login-button"%>
+          </div>
+      </nav>
+<% end %>
