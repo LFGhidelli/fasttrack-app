@@ -1,0 +1,36 @@
+.text_image_below {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image_below_first {
+  display: flex;
+}
+
+.image_below_two {
+  display: flex;
+}
+
+.big_image_one {
+  width: 100%;
+}
+
+.big_image_two {
+  width: 100%;
+}
+
+.text_below {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 76px;
+}
+
+.mid_container {
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  justify-content: space-around;
+  font-size: 1.3rem;
+}

@@ -13,6 +13,11 @@
 @import "pages/index";
 @import "pages/portfolio";
 @import "select2/dist/css/select2";
+@import "components/banner_homepage";
+@import "components/cards_homepage";
+@import "components/main_body_homepage";
+@import "followed_stocks/_index";
+@import "components/footer";
 
 a {
   text-decoration: none;
