@@ -3,14 +3,19 @@
     <h1>News</h1>
   </div>
 
-  <div class="input-group rounded">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-      aria-describedby="search-addon" />
-    <span class="input-group-text border-0" id="search-addon">
-      <i class="fas fa-search"></i>
-    </span>
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group d-flex justify-content-center">
+    <input class="form-control string required w-50" type="text" name="search[query]" id="search_query" />
+    <button name="button" type="submit" class="btn btn-primary">
+      <i class="fas fa-search"></i> Search
+    </button>
   </div>
-<% news = @client.news('AAPL')%>
-<% latest = news.first %>
-<%= latest.headline %>
+  <% end %>
+
+  <% news = @client.news('AAPL',3)%>
+  <% news.each do |n| %>
+  <h4 class="border-bottom m-2 p-2"><%= n.headline %> <%= link_to("Read more", n.url) %></h4>
+  <br>
+  <% end %>
+
 </div>
