@@ -1,11 +1,11 @@
 <ul>
-  <% @followedstocks.each do |stock| %>
-    <li><%= stock.stock.name %>
-    <% if stock.stock.stock_day_infos.present? %>
-      <%= stock.stock.stock_day_infos[0].previous_close %>
-      <%= stock.stock.stock_day_infos[0].day_change %>
-    <% end %>
-    <%= link_to "remove", followed_stock_path(stock), method: :delete%>
+  <% @followedstocks.each do |fstock| %>
+      <td class="text-left"><%= fstock.stock.name %></td>
+      <% if @stock_market_prices[fstock.stock.id].present?%>
+        <td class="text-left"><%= @stock_market_prices[fstock.stock.id][:latest_price] %></td>
+        <td class="text-left"><%= @stock_market_prices[fstock.stock.id][:change_percent_s] %></td>
+      <% end %>
+    <%= link_to "remove", followed_stock_path(fstock), method: :delete%>
     </li>
   <% end %>
 </ul>
