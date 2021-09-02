@@ -13,7 +13,7 @@
   </div>
   <% end %>
 
-<% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),3) %>
+<% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),1) %>
   <% news.each do |n| %>
   <h4 class="border-bottom m-2 p-2 d-flex justify-content-between"><%= n.headline %> <%= link_to("Read more", n.url) %></h4>
   <br>
