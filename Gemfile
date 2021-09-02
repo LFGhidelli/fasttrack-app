@@ -66,3 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #STOCK API GEM
 gem 'iex-ruby-client'
+
+# pundit
+gem 'pundit'
