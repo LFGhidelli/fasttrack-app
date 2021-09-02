@@ -39,9 +39,9 @@ class FollowedStocksController < ApplicationController
     end
   end
 
-    private
+  private
 
-    def followed_stock_params
-      params.require(:followed_stock).permit(:stock_id)
-    end
+  def followed_stock_params
+    params.require(:followed_stock).permit(:stock_id)
+  end
 end
