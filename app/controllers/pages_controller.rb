@@ -26,6 +26,20 @@ class PagesController < ApplicationController
         total_money_value: total_money_value, total_stock_count: total_stock_count, market_value: market_value.round(1) }
     end
   end
+
+
+  def dashboard
+    @followedstock = FollowedStock.new
+    set_client
+    @followed_stocks = current_user.followed_stocks
+    @grouped_followed_stocks = @followed_stocks.group_by(&:stock_id)
+    @stock_market_prices = {}
+    @grouped_followed_stocks.each do |stock_id, _followed_stock_array|
+      stock_api = @client.quote(Stock.find(stock_id).ticker)
+      @stock_market_prices[stock_id] = {
+        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent }
+    end
+  end
 end
 
 private
