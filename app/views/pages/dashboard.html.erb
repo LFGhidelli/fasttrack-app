@@ -1,19 +1,23 @@
 <div class="container">
   <div class="row">
     <div class="followedstock-container">
+
       <% @stock_market_prices.each do |key, value| %>
         <div class="followedstock-box">
           <p class="fs-name"><%= value[:stock_name] %></p>
           <div class="d-flex">
             <p class="fs-price"><%= number_to_currency(value[:latest_price]) %></p>
+
             <% if value[:change_percent] > 0 %>
               <p class="fs-percent-pos"><%= value[:change_percent_s] %></p>
             <% else %>
               <p class="fs-percent-neg"><%= value[:change_percent_s] %></p>
             <% end %>
+
           </div>
         </div>
       <% end %>
+
       <% if @stock_market_prices.count < 5 %>
         <div class="add-followedstock-box">
           <button type="button" class="follow-stock-plus" data-toggle="modal" data-target="#followmodal">
@@ -21,9 +25,33 @@
           </button>
         </div>
       <% end %>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="total-assets-box">
+      <h2>Your Portfolio's Worth</h2>
+      <h2 class="dash-total-value"><%= number_to_currency(@total_market_value.round(1)) %></h2>
+      <p>From <%= @total_stock_count %> stocks.</p>
+    </div>
+    <div class="total-assets-box">
+      <h2>Total P/L</h2>
+      <% if @net > 0 %>
+        <h2 class="dash-total-percentage-prof"><%= @net_percent.round(1) %>%</h2>
+        <p>You are <%= number_to_currency(@net) %> in profit.</p>
+      <% else %>
+        <h2 class="dash-total-percentage-loss"><%= @net_percent.round(1) %>%</h2>
+        <p>You are <%= number_to_currency(@net) %> in loss.</p>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+
+
+
+<%# MODAL %>
 
 
 <div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
@@ -38,7 +66,7 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@followedstock) do |f| %>
-          <%= f.association :stock, input_html: { class: 'select2' }  %>
+        <%= f.association :stock, input_html: { class: 'select2' }  %>
         <div class="modal-footer">
           <div class="form-actions">
             <%= f.button :submit %>

@@ -11,9 +11,9 @@ class FollowedStocksController < ApplicationController
     @followedstock.user = current_user
     @followedstock.save
     if @followedstock.save
-      redirect_to followed_stocks_path(@followedstock)
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to followed_stocks_path(@followedstock), notice: 'this stock is already in your list :('
+      redirect_back(fallback_location: root_path, notice: 'This stock is already in your list!')
     end
   end
 
