@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  def new
-    @article = Article.new
+  def index
+    @articles = Article.new
     @client = IEX::Api::Client.new(
       publishable_token: ENV['IEX_API_PUBLISHABLE_TOKEN'],
       secret_token: ENV['IEX_API_SECRET_TOKEN'],
