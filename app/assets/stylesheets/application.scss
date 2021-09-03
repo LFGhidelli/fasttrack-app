@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/dashboard";
 @import "pages/portfolio";
 @import "select2/dist/css/select2";
 @import "components/banner_homepage";
@@ -18,6 +19,7 @@
 @import "components/main_body_homepage";
 @import "followed_stocks/_index";
 @import "components/footer";
+@import "articles/index";
 
 a {
   text-decoration: none;

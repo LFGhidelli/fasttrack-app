@@ -11,7 +11,7 @@
         <h5 class="fs-6 mb-0">
           <a class="text-decoration-none" href="#"><%= current_user.email %></a>
         </h5>
-        <%= link_to "Logout", destroy_user_session_path, :method => :delete, class:"logout-button mt-1 mb-0"%>
+        <%= link_to "Logout", destroy_user_session_path, :method => :delete,  class:"logout-button mt-1 mb-0"%>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
       </li>
       <li class="">
         <i class="uil-folder"></i><a href="#"><i class="fas fa-newspaper"></i>
-          <%= link_to "News", articles_news_path %></a>
+          <%= link_to "News", articles_path %></a>
       </li>
     </ul>
   </aside>
