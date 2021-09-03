@@ -73,3 +73,18 @@
 .follow-stock-plus:hover {
   color: rgb(207, 214, 228);
 }
+
+
+.total-assets-box {
+  background-color: #14121E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 10px;
+}
