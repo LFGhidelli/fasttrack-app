@@ -44,7 +44,7 @@
   }
 }
 .animated-title {
-  color: rgb(203, 203, 203);
+  color: #13121e;
   font-family: Roboto, Arial, sans-serif;
   height: 90vmin;
   left: 35%;
@@ -72,7 +72,7 @@
   display: block;
 }
 .animated-title > div.text-top {
-  border-bottom: 1vmin solid rgb(122, 122, 122);
+  border-bottom: 1vmin solid #13121e;
   top: 0;
   width: 60%;
 }
@@ -84,7 +84,7 @@
   transform: translate(0, 100%);
 }
 .animated-title > div.text-top div span:first-child {
-  color: rgb(203, 203, 203);
+  color: #13121e;
 }
 .animated-title > div.text-bottom {
   bottom: 0;
