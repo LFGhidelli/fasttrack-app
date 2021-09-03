@@ -1,47 +1,68 @@
-<ul class="followed-stock-all dflex justify-space-around">
-  <% @followedstocks.each do |fstock| %>
-      <li class= "one-stock pt-2">
-        <div class="d-flex bd-highlight" style="height: 20px">
-          <div class="pl-4 bd-highlight"> <%= fstock.stock.ticker %> </div>
-          <div class="pl-2 bd-highlight"> <%= link_to "-", followed_stock_path(fstock), method: :delete, class: "btn btn-delete" %> </div>
-          <div class="ml-auto pr-4 bd-highlight"> <%= @stock_market_prices[fstock.stock.id][:latest_price] %> </div>
-        </div>
-        <div class="fs-info d-flex bd-highlight mb-3">
-          <% if @stock_market_prices[fstock.stock.id].present?%>
-            <div class="name pl-4 bd-highlight"> <%= fstock.stock.name %> </div>
-            <div class= "info-2 ml-auto pr-4 bd-highlight"><%= @stock_market_prices[fstock.stock.id][:change_percent_s] %></div>
-          <% end %>
-        </div>
-    </li>
-  <% end %>
-</ul>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#followmodal">
-  Add a stock
-</button>
-
-<!-- followModal -->
-<div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="followmodalLabel">Stock</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+<div class="container followed-page">
+  <% t = Time.now %>
+  <div class="topdiv d-flex bd-highlight">
+    <div class="header-left pl-4 bd-highlight pt-3">
+      <h3>Stocks</h3>
+      <div class="header-time">
+        <%= t.strftime('%d %B') %>
       </div>
-      <div class="modal-body">
-        <%= simple_form_for(@followedstock) do |f| %>
-          <%= f.association :stock, input_html: { class: 'select2' }  %>
-        <div class="modal-footer">
-          <div class="form-actions">
-            <%= f.button :submit %>
+    </div>
+    <div class="header-right ml-auto pr-4 bd-highlight pt-4" style="height: 50px">
+      <button type="button" class="btn btn-search" data-toggle="modal" data-target="#followmodal">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="followed-stock-all">
+    <% @followedstocks.each do |fstock| %>
+        <div class= "one-stock pt-2 mt-3">
+          <div class="one-stock-info ">
+            <div class="d-flex bd-highlight" style="height: 20px">
+              <div class="pl-4 bd-highlight d-flex align-items-center mt-1"> <%= fstock.stock.ticker %> </div>
+              <div class="pl-2 bd-highlight d-flex align-items-center "> <%= link_to "-", followed_stock_path(fstock), method: :delete, class: "btn-delete" %> </div>
+              <div class="ml-auto pr-4 bd-highlight"> <%= @stock_market_prices[fstock.stock.id][:latest_price] %> </div>
+            </div>
+            <div class="fs-info d-flex bd-highlight">
+              <% if @stock_market_prices[fstock.stock.id].present?%>
+                <div class="name pl-4 bd-highlight mt-1"> <%= fstock.stock.name %> </div>
+              <% percent_change = @stock_market_prices[fstock.stock.id][:change_percent_s] %>
+                <% if percent_change.include? "-" %>
+                  <div class= "info-2 ml-auto pr-4 bd-highlight negative"><p><mark><%= @percent_change = @stock_market_prices[fstock.stock.id][:change_percent_s] %></mark></p></div>
+                <% else %>
+                  <div class= "info-2 ml-auto pr-4 bd-highlight positive"><p><mark><%= @percent_change = @stock_market_prices[fstock.stock.id][:change_percent_s] %></mark></p></div>
+                <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
-        <% end %>
+    <% end %>
+  </div>
+
+
+  <!-- followModal -->
+  <div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="followmodalLabel">Stock</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(@followedstock) do |f| %>
+            <%= f.association :stock, input_html: { class: 'select2' }  %>
+          <div class="modal-footer">
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  </div>
 </div>
