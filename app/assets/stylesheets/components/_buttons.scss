@@ -10,14 +10,14 @@
 }
 
 .logout-button {
-  color: #B33F40;
+  color: #b33f40;
 }
 .logout-button:hover {
   color: #862a2b;
 }
 
 .btn-search {
-  background-color: #14121E;
+  background-color: #14121e;
   opacity: 0.7;
   transition: 0.5s;
   height: 38px;
@@ -34,4 +34,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid #4a4a4a;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: #13121e;
+  border-color: black;
+  margin-top: 10px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  border-color: black;
+  color: black;
+  background-color: white;
 }
