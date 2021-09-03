@@ -8,3 +8,23 @@
 .logout-button:hover {
   color: #862a2b;
 }
+
+.btn-search {
+  background-color: #14121E;
+  opacity: 0.7;
+  transition: 0.5s;
+  height: 38px;
+  width: 38px;
+  border-radius: 50px;
+}
+
+.btn-search:hover {
+  opacity: 1;
+}
+
+.btn-search i {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

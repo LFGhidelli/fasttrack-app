@@ -1,8 +1,38 @@
+.topdiv {
+  padding-top: 10px;
+  border-bottom: 3px solid #14121E;
+}
+
+.header-left {
+  font-weight: bolder;
+  color: grey;
+}
+
+.header-left h3 {
+  font-weight: bolder;
+  color: #14121E;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.one-stock {
+  margin: 15px 8px;
+  color: white;
+  background-color: #14121E;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+
 .btn-delete {
   color: black;
   background-color: white;
   padding: 2px;
-  border-radius: 100px;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   font-weight: bolder;
   transition: opacity 0.3s ease;
 }
@@ -10,4 +40,17 @@
 .btn-delete:hover {
   color: white;
   background-color:red;
+}
+
+.negative mark {
+  background-color: red;
+  color: white;
+  padding: 3px 7px;
+  border-radius: 5px;
+}
+
+.positive mark {
+  background-color: green;
+  color: white;
+  padding: 3px 7px;
 }
