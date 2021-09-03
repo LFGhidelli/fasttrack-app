@@ -30,9 +30,20 @@
   </div>
   <div class="row">
     <div class="total-assets-box">
-
+      <h2>Your Portfolio's Worth</h2>
+      <h2 class="dash-total-value"><%= number_to_currency(@total_market_value.round(1)) %></h2>
+      <p>From <%= @total_stock_count %> stocks.</p>
     </div>
-
+    <div class="total-assets-box">
+      <h2>Total P/L</h2>
+      <% if @net > 0 %>
+        <h2 class="dash-total-percentage-prof"><%= @net_percent.round(1) %>%</h2>
+        <p>You are <%= number_to_currency(@net) %> in profit.</p>
+      <% else %>
+        <h2 class="dash-total-percentage-loss"><%= @net_percent.round(1) %>%</h2>
+        <p>You are <%= number_to_currency(@net) %> in loss.</p>
+      <% end %>
+    </div>
   </div>
 </div>
 

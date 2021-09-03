@@ -76,15 +76,46 @@
 
 
 .total-assets-box {
-  background-color: #14121E;
+  background: rgb(45, 41, 65);
+  background: linear-gradient(90deg, rgba(45, 41, 65, 1) 0%, rgba(56, 52, 80, 1) 30%, rgba(63, 59, 89, 1) 63%, rgba(69, 64, 94, 1) 100%);
   color: white;
   display: flex;
-  justify-content: center;
-  align-items: left;
+  flex-grow: 1;
+  align-items: center;
+  justify-content:center;
   flex-direction: column;
-  height: 400px;
+  height: 150px;
   width: 400px;
   border-radius: 20px;
   margin: 15px;
   padding: 10px;
+  p{
+    margin: 0;
+  }
+  h2{
+    margin:0;
+  }
+}
+
+.dash-total-value{
+  font-size: 36px;
+  align-self: center;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dash-total-percentage-prof{
+  font-size: 36px;
+  align-self: center;
+  font-weight: bold;
+  margin: 0;
+  color: #5ab15e;
+}
+
+.dash-total-percentage-loss{
+  font-size: 36px;
+  align-self: center;
+  font-weight: bold;
+  margin: 0;
+  color: #be4b4d;
 }
