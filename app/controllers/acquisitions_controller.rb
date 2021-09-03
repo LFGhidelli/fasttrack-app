@@ -23,6 +23,22 @@ class AcquisitionsController < ApplicationController
     redirect_to acquisition_path(@acquisition)
   end
 
+  def sell_acquisition
+    set_client
+    @acquisition = Acquisition.new(acquisition_params)
+    @acquisition.user = current_user
+    @acquisition.value_bought = -@client.quote(@acquisition.stock.ticker).latest_price
+    @acquisition.amount_bought = -@acquisition.amount_bought
+    @acquisition.date_bought = Date.today
+    # authorize @stock
+    # authorize @acquisition
+    if @acquisition.save
+      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'your sell request has been sent!'
+    else
+      render portfolio_path
+    end
+  end
+
   private
 
   def acquisition_params

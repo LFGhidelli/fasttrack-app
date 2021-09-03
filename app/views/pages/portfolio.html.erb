@@ -41,6 +41,16 @@
         <td colspan="5" id="extra_<%=key%>" class="d-none">
           <span>You paid an average of <b><%= number_to_currency(avg_price) %></b> per stock.</span><br>
           <span>The current market price is <b><%= number_to_currency(current_price) %></b> per stock.</span>
+          <%= simple_form_for(@acquisition, as: :acquisition, method: :post, url: sell_acquisition_path) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :stock_id, as: :hidden, input_html: {value: Stock.find(key).id} %>
+            <%= f.input :amount_bought, :label => "Amount to sell" %>
+            <div class="modal-footer">
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            </div>
+          <% end %>
         </td>
       </tr>
 
