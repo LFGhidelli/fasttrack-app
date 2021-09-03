@@ -33,27 +33,34 @@ puts "Creating Stock"
 tsla = Stock.create!(ticker: 'TSLA', name: 'Tesla'),
 amazon = Stock.create!(ticker: 'AMZN', name: 'Amazon'),
 googl = Stock.create!(ticker: 'GOOGL', name: 'Google'),
-facebook = Stock.create!(ticker: 'FB', name: 'Facebook')
+facebook = Stock.create!(ticker: 'FB', name: 'Facebook'),
+mcdonalds = Stock.create!(ticker: 'MCD', name: 'McDonalds'),
+ford = Stock.create!(ticker: 'FORD', name: 'Ford'),
+gamestop = Stock.create!(ticker: 'GMC', name: 'Game Stop'),
+netflix = Stock.create!(ticker: 'NFLX', name: 'Netflix'),
+microsoft = Stock.create!(ticker: 'MSFT', name: 'Microsoft')
+uber = Stock.create!(ticker: 'UBER', name: 'Uber')
+
 
 users = [luis, victor, noam, jean]
-stocks = [tsla, amazon, googl, facebook]
+stocks = [tsla, amazon, googl, facebook, mcdonalds, ford, gamestop, netflix, microsoft, uber]
 
 puts "Creating Stock Day Info"
 
 10.times do
-  stock = stocks[rand(1...4)]
+  stock = stocks[rand(1...10)]
   StockDayInfo.create!(stock: stock, latest_price: rand(1..100))
 end
 
 puts "Creating Followed Stocks"
 
 10.times do
-  FollowedStock.create(stock: stocks[rand(1...4)], user: users.sample)
+  FollowedStock.create(stock: stocks[rand(1...10)], user: users.sample)
   puts "ok"
 end
 
 puts "Creating Acquisitions"
 
 10.times do
-  Acquisition.create!(stock: stocks[rand(1...4)], user: users[rand(1...4)], date_bought: Faker::Date.in_date_period, amount_bought: rand(1..100), value_bought: rand(10..100))
+  Acquisition.create!(stock: stocks[rand(1...10)], user: users[rand(1...4)], date_bought: Faker::Date.in_date_period, amount_bought: rand(1..100), value_bought: rand(10..100))
 end

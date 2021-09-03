@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+h1{
+    color: #fafafa;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+    font-family: "Roboto",
+    helvetica,
+    arial,
+    sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(65, 65, 65);
+}
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #E7E7E7;
+}
