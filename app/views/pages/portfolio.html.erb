@@ -27,12 +27,12 @@
         <% net = value[:market_value]-value[:total_money_value] %>
         <% net_percent = (net/value[:total_money_value])*100 %>
         <% if net > 0 %>
-          <td class="text-left profit-text"><%= number_to_currency(net.round(1)) %></td>
-          <% net_percent = (net/value[:total_money_value])*100 %>
-          <td class="text-left profit-text"><%= net_percent.round(1)%>%</td>
+        <td class="text-left profit-text"><%= number_to_currency(net.round(1)) %></td>
+        <% net_percent = (net/value[:total_money_value])*100 %>
+        <td class="text-left profit-text"><%= net_percent.round(1)%>%</td>
         <% else %>
-          <td class="text-left loss-text"><%= number_to_currency(net.round(1)) %></td>
-          <td class="text-left loss-text"><%= net_percent.round(1)%>%</td>
+        <td class="text-left loss-text"><%= number_to_currency(net.round(1)) %></td>
+        <td class="text-left loss-text"><%= net_percent.round(1)%>%</td>
         <% end %>
 
 
@@ -56,11 +56,11 @@
 
 <%# VICTOR'S WORK %>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Add a stock
+  Buy stock
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<%# <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -72,16 +72,50 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@acquisition) do |f| %>
-        <div class="form-inputs">
+<%# <div class="form-inputs">
           <%= f.association :stock, input_html: { class: 'select2' }  %>
-          <%= f.input :value_bought, :label => "Purchase price" %>
-          <%= f.input :amount_bought, :label => "Amount bought" %>
-          <div class="modal-footer">
+<%# <%= f.input :value_bought, :label => "Purchase price" %>
+<%# <%= f.input :amount_bought, :label => "Amount bought" %>
+<%# <div class="modal-footer">
             <div class="form-actions">
               <%= f.button :submit %>
-            </div>
+<%# </div>
           </div>
           <% end %>
+<%# </div>
+      </div>
+    </div>
+  </div>
+</div> %>
+
+<%# JS's work %>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="modal-content">
+      <div class="modal-body">
+        <h1 class="title_modal_acquisition">Purchase </h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="column" id="main">
+          <div class="modall-body">
+            <%= simple_form_for(@acquisition) do |f| %>
+            <div class="form-inputs">
+              <div class="text_on_left">
+                <%= f.association :stock, input_html: { class: 'select2' }  %>
+                <%= f.input :value_bought, :label => "Purchase price", class:"text_modal" %>
+                <%= f.input :amount_bought, :label => "Amount bought", class:"text_modal" %>
+              </div>
+              <div class="modal-footer">
+                <div class="form-actions">
+                  <%= f.button :submit, :label => "Confirm the purchase"%>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

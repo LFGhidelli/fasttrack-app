@@ -1,0 +1,96 @@
+.modal-content {
+  border-radius: 20px;
+  left: 150px;
+  background-color: #f6f4f5;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.title_modal_acquisition {
+  justify-content: center;
+  align-items: center;
+  background-color: #14121e;
+  color: white;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  display: flex;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select2-selection {
+  width: 145px;
+}
+
+.select2-search--dropdown {
+  display: none;
+}
+
+.text_modal {
+  align-items: center;
+}
+
+.acquisition_stock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.acquisition_value_bought {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.acquisition_amount_bought {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+abbr {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form_inputs {
+  display: flex;
+}
+
+.text_on_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.close_acquisition {
+  position: relative;
+  bottom: 44px;
+  width: 28px;
+  left: 458px;
+  border: none;
+  background-color: #14121e;
+  color: white;
+}
+
+.select2-search--dropdown {
+  display: none;
+}
+
+.modal-footer {
+  border: none;
+}
