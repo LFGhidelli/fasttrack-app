@@ -49,6 +49,8 @@
   transition: 0.3s;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin:0;
 }
 
 .btn-ghost:hover {
@@ -56,4 +58,11 @@
   border-color: black;
   color: black;
   background-color: white;
+}
+
+.button-div-custom{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:10px;
 }
