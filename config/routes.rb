@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get "portfolio", to: "pages#portfolio"
   get "articles/news", to: "articles#new"
   get "articles/:id", to: "articles#show"
+  post "acquisitions/sell_acquisition", to: "acquisitions#sell_acquisition", as: :sell_acquisition
 end
