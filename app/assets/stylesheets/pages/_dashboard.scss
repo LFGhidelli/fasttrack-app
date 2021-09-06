@@ -76,8 +76,8 @@
 
 
 .total-assets-box {
-  background: rgb(45, 41, 65);
-  background: linear-gradient(90deg, rgba(45, 41, 65, 1) 0%, rgba(56, 52, 80, 1) 30%, rgba(63, 59, 89, 1) 63%, rgba(69, 64, 94, 1) 100%);
+  background: rgb(97, 60, 102);
+  background: linear-gradient(90deg, rgba(97, 60, 102, 1) 0%, rgba(36, 103, 119, 1) 100%);
   color: white;
   display: flex;
   flex-grow: 1;
@@ -95,6 +95,12 @@
   h2{
     margin:0;
   }
+}
+
+.overview-stock-title{
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
 }
 
 .dash-total-value{
@@ -118,4 +124,57 @@
   font-weight: bold;
   margin: 0;
   color: #be4b4d;
+}
+
+.more-box {
+  background: rgb(97, 60, 102);
+  background: linear-gradient(90deg, rgba(97, 60, 102, 1) 0%, rgba(36, 103, 119, 1) 100%);
+  display: flex;
+  flex-grow: 1;
+  color: white;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 10px;
+  p {
+    margin: 0;
+  }
+  h2 {
+    margin: 0;
+
+  }
+}
+
+.overview-pos-box {
+background: rgb(132, 176, 130);
+background: linear-gradient(90deg, rgba(132, 176, 130, 0.20351890756302526) 0%, rgba(36, 119, 45, 0.19791666666666663) 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 100px;
+  width: 200px;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.overview-neg-box {
+  background: rgb(176, 130, 130);
+  background: linear-gradient(90deg, rgba(176, 130, 130, 0.20351890756302526) 0%, rgba(119, 36, 36, 0.19791666666666663) 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 100px;
+  width: 200px;
+  border-radius: 20px;
+  margin: 15px;
+  padding: 10px;
 }
