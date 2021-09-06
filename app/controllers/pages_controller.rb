@@ -27,8 +27,11 @@ class PagesController < ApplicationController
     @followedstock = FollowedStock.new
     set_client
     set_totals
-    @net = @total_market_value-@total_paid_value
-    @net_percent = (@net/@total_paid_value)*100
+    set_acquisitions
+    unless @total_market_value.zero? || @total_paid_value.zero?
+      @net = @total_market_value - @total_paid_value
+      @net_percent = ( @net / @total_paid_value ) * 100
+    end
     @followed_stocks = current_user.followed_stocks
     @grouped_followed_stocks = @followed_stocks.group_by(&:stock_id)
     @stock_market_prices = {}
@@ -66,9 +69,13 @@ class PagesController < ApplicationController
         market_value += acquisition.amount_bought * stock_api.latest_price
       end
       @stock_total_value[stock_id] = {
-        total_money_value: total_money_value, total_stock_count: total_stock_count, market_value: market_value.round(1) }
-      end
+        total_money_value: total_money_value,
+        total_stock_count: total_stock_count,
+        market_value: market_value.round(1),
+        market_percentage_change: stock_api.change_percent
+      }
     end
+  end
 
   def set_totals
     set_acquisitions
