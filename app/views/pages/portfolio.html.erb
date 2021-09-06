@@ -1,6 +1,6 @@
 <body class="table_body">
   <div class="portfolio-title">
-    <h3 class="m-0 pt-3 d-flex justify-content-center">Your Portfolio</h3>
+    <h3 class="m-0 pt-3 d-flex justify-content-center">Portfolio</h3>
     <div class="subtitle d-flex justify-content-center">
       <h5 class="total-portfolio mr-3"><%= number_to_currency(@total_market_value.round(1)) %></h5>
       <% if @net_percent > 0 %>
@@ -13,6 +13,10 @@
       <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal">
         Buy stock
       </button>
+      <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#sellModal">
+        sell stock
+      </button>
+      <%= render "sell" %>
     </div>
   </div>
   <table class="table-fill">
@@ -54,38 +58,6 @@
         <td colspan="5" id="extra_<%=key%>" class="d-none">
           <span>You paid an average of <b><%= number_to_currency(avg_price) %></b> per stock.</span><br>
           <span>The current market price is <b><%= number_to_currency(current_price) %></b> per stock.</span>
-          <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#sellModal">
-            sell stock
-          </button>
-          <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="sellModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content" id="modal-content">
-                <div class="modal-body">
-                  <h1 class="title_modal_acquisition">Sell </h1>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <div class="column" id="main">
-                    <div class="modall-body">
-                      <%= simple_form_for(@acquisition, as: :acquisition, method: :post, url: sell_acquisition_path) do |f| %>
-                      <div class="form-inputs">
-                        <%= f.input :stock_id, as: :hidden, input_html: {value: Stock.find(key).id} %>
-                        <%= f.input :amount_bought, :label => "Amount to sell" %>
-                        <div class="modal-footer">
-                          <div class="form-actions">
-                            <%= f.button :submit, "Confirm" %>
-                          </div>
-                        </div>
-                      </div>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
         </td>
       </tr>
 
