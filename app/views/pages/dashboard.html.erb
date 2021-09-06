@@ -59,7 +59,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="followmodalLabel">Stock</h5>
+        <h5 class="modal-title" id="followmodalLabel">Follow a new stock</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -69,7 +69,7 @@
         <%= f.association :stock, input_html: { class: 'select2' }  %>
         <div class="modal-footer">
           <div class="form-actions">
-            <%= f.button :submit %>
+            <%= f.button :submit, "Follow this stock" %>
           </div>
         </div>
         <% end %>
