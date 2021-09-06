@@ -8,8 +8,20 @@ class PagesController < ApplicationController
   def portfolio
     set_client
     set_acquisitions
+    @followedstock = FollowedStock.new
+    set_client
+    set_totals
+    @net = @total_market_value-@total_paid_value
+    @net_percent = (@net/@total_paid_value)*100
+    @followed_stocks = current_user.followed_stocks
+    @grouped_followed_stocks = @followed_stocks.group_by(&:stock_id)
+    @stock_market_prices = {}
+    @grouped_followed_stocks.each do |stock_id, _followed_stock_array|
+      stock_api = @client.quote(Stock.find(stock_id).ticker)
+      @stock_market_prices[stock_id] = {
+        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent }
+    end
   end
-
 
   def dashboard
     @followedstock = FollowedStock.new
