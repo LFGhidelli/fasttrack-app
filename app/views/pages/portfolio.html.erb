@@ -1,22 +1,34 @@
 <body class="table_body">
-  <div class="table-title">
-    <h3 class="m-0 mt-5">Your Portfolio</h3>
+  <div class="portfolio-title">
+    <h3 class="m-0 pt-3 d-flex justify-content-center">Portfolio</h3>
+    <div class="subtitle d-flex justify-content-center">
+      <h5 class="total-portfolio mr-3"><%= number_to_currency(@total_market_value.round(1)) %></h5>
+      <% if @net_percent > 0 %>
+      <h5 class="port-total-percentage-prof"><%= @net_percent.round(1) %>%</h5>
+      <% else %>
+      <h5 class="port-total-percentage-loss"><%= @net_percent.round(1) %>%</h5>
+      <% end %>
+    </div>
     <div class="button-div-custom">
       <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal">
-      Buy stock
+        Buy stock
       </button>
+      <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#sellModal">
+        sell stock
+      </button>
+      <%= render "sell" %>
     </div>
   </div>
   <table class="table-fill">
     <thead>
-      <tr>
-        <th class="text-left">Stock</th>
-        <th class="text-left">Amount</th>
-        <th class="text-left">Your Cost</th>
-        <th class="text-left">Current Value</th>
-        <th class="text-left">Net</th>
-        <th class="text-left">P/L</th>
-        <th class="text-left"></th>
+      <tr class="all-titles">
+        <th class="port-table-title">Stock</th>
+        <th class="port-table-title">Amount</th>
+        <th class="port-table-title">invested</th>
+        <th class="port-table-title">P/L($)</th>
+        <th class="port-table-title">P/L(%)</th>
+        <th class="port-table-title">Current Value</th>
+        <th class="port-table-title"></th>
       </tr>
     </thead>
     <tbody class="table-hover">
@@ -25,17 +37,17 @@
         <td class="text-left"><%= Stock.find(key).name %></td>
         <td class="text-left"><%= value[:total_stock_count] %></td>
         <td class="text-left"><%= number_to_currency(value[:total_money_value]) %></td>
-        <td class="text-left"><%= number_to_currency(value[:market_value]) %></td>
 
         <% net = value[:market_value]-value[:total_money_value] %>
         <% net_percent = (net/value[:total_money_value])*100 %>
         <% if net > 0 %>
-          <td class="text-left profit-text"><%= number_to_currency(net.round(1)) %></td>
-          <td class="text-left profit-text"><%= net_percent.round(1)%>%</td>
+        <td class="text-left profit-text"><%= number_to_currency(net.round(1)) %></td>
+        <td class="text-left profit-text"><%= net_percent.round(1)%>%</td>
         <% else %>
         <td class="text-left loss-text"><%= number_to_currency(net.round(1)) %></td>
         <td class="text-left loss-text"><%= net_percent.round(1)%>%</td>
         <% end %>
+        <td class="text-left"><%= number_to_currency(value[:market_value]) %></td>
 
         <td><a href="#" id="show_<%=key%>" class="show-extra down-arrow" data-id="<%=key%>">▼</a></td>
       </tr>
@@ -46,16 +58,6 @@
         <td colspan="5" id="extra_<%=key%>" class="d-none">
           <span>You paid an average of <b><%= number_to_currency(avg_price) %></b> per stock.</span><br>
           <span>The current market price is <b><%= number_to_currency(current_price) %></b> per stock.</span>
-          <%= simple_form_for(@acquisition, as: :acquisition, method: :post, url: sell_acquisition_path) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :stock_id, as: :hidden, input_html: {value: Stock.find(key).id} %>
-            <%= f.input :amount_bought, :label => "Amount to sell" %>
-            <div class="modal-footer">
-              <div class="form-actions">
-                <%= f.button :submit %>
-              </div>
-            </div>
-          <% end %>
         </td>
       </tr>
 
@@ -63,6 +65,7 @@
     </tbody>
   </table>
 </body>
+
 <%# VICTOR'S WORK %>
 
 

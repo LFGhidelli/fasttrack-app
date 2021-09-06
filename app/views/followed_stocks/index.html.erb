@@ -9,7 +9,7 @@
     </div>
     <div class="header-right ml-auto pr-4 bd-highlight pt-4" style="height: 50px">
       <button type="button" class="btn btn-search" data-toggle="modal" data-target="#followmodal">
-        <i class="fas fa-search"></i>
+        <i class="fas fa-plus"></i>
       </button>
     </div>
   </div>
@@ -56,7 +56,7 @@
             <%= f.association :stock, input_html: { class: 'select2' }  %>
           <div class="modal-footer">
             <div class="form-actions">
-              <%= f.button :submit, :label => "Confirm"%>
+              <%= f.button :submit, "Follow this stock"%>
             </div>
           </div>
           <% end %>

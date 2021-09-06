@@ -1,32 +1,31 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
 
-.table-body {
-  background-color: #3e94ec;
-  font-family: "Roboto", helvetica, arial, sans-serif;
+.all-titles {
+  border-radius: 100px;
+  background-color: black;
+  color: white;
+}
+
+.total-portfolio {
+  font-size: 40px;
+  font-weight: bold;
+  color:rgb(65, 65, 65);
+}
+
+.port-total-percentage-prof {
+  padding-top: 4px;
   font-size: 16px;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
+  font-weight: bold;
+  color: #5ab15e;
 }
 
-div.table-title {
-  display: block;
-  margin: auto;
-  max-width: 600px;
-  padding: 5px;
-  width: 100%;
+.port-total-percentage-loss {
+  padding-top: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #be4b4d;
 }
 
-.table-title h3 {
-  color: #fafafa;
-  font-size: 30px;
-  font-weight: 600;
-  font-style: normal;
-  font-family: "Roboto", helvetica, arial, sans-serif;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-  text-transform: uppercase;
-  text-align: center;
-  color: rgb(65, 65, 65);
-}
 
 
 /*** Table Styles **/
@@ -44,10 +43,6 @@ div.table-title {
 }
 
 th {
-  color: #f9fcff;
-  background: #14121E;
-  border-bottom: 4px solid #5C538A;
-  border-right: 1px solid #ffffff;
   font-size: 23px;
   font-weight: 100;
   padding: 24px;
@@ -81,7 +76,7 @@ tr:hover td {
 
 .expanded-row:hover td{
   background: none;
-  color: #666B85;
+  color: #13121E;
   border-top: none;
 }
 
@@ -98,7 +93,7 @@ tr:nth-child(odd) td {
 }
 
 tr:nth-child(odd):hover td {
-  background: #484360;
+  background: #4E5066;
 }
 
 tr:last-child td:first-child {
@@ -117,7 +112,6 @@ td {
   font-weight: 300;
   font-size: 18px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
 }
 
 td:last-child {

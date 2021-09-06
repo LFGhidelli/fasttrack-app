@@ -82,3 +82,35 @@ p {
 .select {
   margin-right: 5px;
 }
+
+.form-actions > .btn {
+  color: white;
+  border: 1px solid #4a4a4a;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: #13121e;
+  border-color: black;
+  margin-top: 10px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.form-actions > .btn:hover {
+  opacity: 1;
+  border-color: black;
+  color: black;
+  background-color: white;
+}
+
+span > .select2-search {
+  display: none;
+}
+
+.select2-results__options {
+  padding: 0;
+}
