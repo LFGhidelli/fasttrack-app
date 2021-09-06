@@ -17,7 +17,8 @@
 .one-stock {
   margin: 15px 8px;
   color: white;
-  background-color: #14121E;
+  background: rgb(97, 60, 102);
+  background: linear-gradient(90deg, rgba(97, 60, 102, 1) 0%, rgba(36, 103, 119, 1) 100%);
   border-radius: 15px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
