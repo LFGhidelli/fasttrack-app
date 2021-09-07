@@ -7,26 +7,25 @@
   <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
   <div class="search-form-control form-group d-flex justify-content-center">
     <input class="form-control string required w-50" type="text" value="<%= params.dig(:search, :query) %>"
-      name="search[query]" id="search_query" placeholder="Type a ticker"/>
+      name="search[query]" id="search_query" placeholder="Type a ticker" />
     <button name="button" type="submit" class="btn btn-primary button-articles">
       <i class="fas fa-search"></i> Search
     </button>
   </div>
   <% end %>
 
-  <div class="card p-2 col-sm-12 col-md-12 mb-1 col-lg-3 mr-1">
-    <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),4) %>
-    <% news.each do |n| %>
-    <h3 class="card-header p-2 d-flex justify-content-between"></h3>
-    <div class="card-body p-0">
-      <h3><%= n.headline %></h3>
-      <div class="card-text">
-        <p><%= n.summary %></p>
-        <%= link_to("Read more", n.url) %>
 
-        <% end %>
+  <div class="cards-ft">
+      <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),6) %>
+      <% news.each do |n| %>
+      <div class="card" style="width: 18rem;">
+        <img class="article-img" src="<%= n.image %>" alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= n.headline %></h5>
+          <p class="card-text"><%= n.summary %></p>
+          <%= link_to("Read more", n.url) %>
+        </div>
       </div>
+      <% end %>
     </div>
-  </div>
-
 </div>
