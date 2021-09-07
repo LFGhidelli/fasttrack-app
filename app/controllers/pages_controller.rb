@@ -8,8 +8,8 @@ class PagesController < ApplicationController
   def portfolio
     set_client
     set_acquisitions
-    @followedstock = FollowedStock.new
     set_totals
+    @followedstock = FollowedStock.new
     @net = @total_market_value-@total_paid_value
     if @net != 0
       @net_percent = (@net/@total_paid_value)*100
@@ -74,7 +74,11 @@ class PagesController < ApplicationController
       total_stock_count = 0
       market_value = 0
       acquisition_array.each do |acquisition|
-        total_money_value += acquisition.value_bought * acquisition.amount_bought
+        if acquisition.value_bought.negative?
+          total_money_value += -(acquisition.value_bought * acquisition.amount_bought)
+        else
+          total_money_value += acquisition.value_bought * acquisition.amount_bought
+        end
         total_stock_count += acquisition.amount_bought
         market_value += acquisition.amount_bought * stock_api.latest_price
       end
