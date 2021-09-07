@@ -76,8 +76,8 @@
 
 
 .total-assets-box {
-  background: rgb(97, 60, 102);
-  background: linear-gradient(90deg, rgba(97, 60, 102, 1) 0%, rgba(36, 103, 119, 1) 100%);
+  background: rgb(37,143,189);
+  background: linear-gradient(90deg, rgba(37,143,189,1) 0%, rgba(137,100,214,1) 26%, rgba(180,94,177,1) 53%, rgba(204,110,144,1) 72%, rgba(213,125,89,1) 100%);
   color: white;
   display: flex;
   flex-grow: 1;
@@ -123,12 +123,12 @@
   align-self: center;
   font-weight: bold;
   margin: 0;
-  color: #be4b4d;
+  color: #E05856;
 }
 
 .more-box {
-  background: rgb(97, 60, 102);
-  background: linear-gradient(90deg, rgba(97, 60, 102, 1) 0%, rgba(36, 103, 119, 1) 100%);
+  background: rgb(37, 143, 189);
+  background: linear-gradient(90deg, rgba(37, 143, 189, 1) 0%, rgba(137, 100, 214, 1) 26%, rgba(180, 94, 177, 1) 53%, rgba(204, 110, 144, 1) 72%, rgba(213, 125, 89, 1) 100%);
   display: flex;
   flex-grow: 1;
   color: white;
@@ -150,8 +150,7 @@
 }
 
 .overview-pos-box {
-background: rgb(132, 176, 130);
-background: linear-gradient(90deg, rgba(132, 176, 130, 0.20351890756302526) 0%, rgba(36, 119, 45, 0.19791666666666663) 100%);
+  background: rgba(132, 176, 130, 0.247);
   color: white;
   display: flex;
   justify-content: center;
@@ -165,8 +164,7 @@ background: linear-gradient(90deg, rgba(132, 176, 130, 0.20351890756302526) 0%, 
 }
 
 .overview-neg-box {
-  background: rgb(176, 130, 130);
-  background: linear-gradient(90deg, rgba(176, 130, 130, 0.20351890756302526) 0%, rgba(119, 36, 36, 0.19791666666666663) 100%);
+  background: rgba(209, 115, 115, 0.253);
   color: white;
   display: flex;
   justify-content: center;
