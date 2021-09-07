@@ -14,7 +14,7 @@
   </div>
   <% end %>
 
-  <div class="card p-2 col-sm-12 col-md-12 mb-1 col-lg-3 mr-1">
+  <div class="card p-2 col-sm-12 col-md-12 mb-1 col-lg-12 mr-1">
     <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),4) %>
     <% news.each do |n| %>
     <h3 class="card-header p-2 d-flex justify-content-between"></h3>
