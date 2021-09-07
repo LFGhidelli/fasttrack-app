@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home ]
+  skip_before_action :authenticate_user!, only: [:home]
 
   def home
     set_client
@@ -22,7 +22,8 @@ class PagesController < ApplicationController
     @grouped_followed_stocks.each do |stock_id, _followed_stock_array|
       stock_api = @client.quote(Stock.find(stock_id).ticker)
       @stock_market_prices[stock_id] = {
-        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent }
+        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent
+      }
     end
   end
 
@@ -33,7 +34,7 @@ class PagesController < ApplicationController
     set_acquisitions
     unless @total_market_value.zero? || @total_paid_value.zero?
       @net = @total_market_value - @total_paid_value
-      @net_percent = ( @net / @total_paid_value ) * 100
+      @net_percent = (@net / @total_paid_value) * 100
     end
     @followed_stocks = current_user.followed_stocks
     @grouped_followed_stocks = @followed_stocks.group_by(&:stock_id)
@@ -41,7 +42,14 @@ class PagesController < ApplicationController
     @grouped_followed_stocks.each do |stock_id, _followed_stock_array|
       stock_api = @client.quote(Stock.find(stock_id).ticker)
       @stock_market_prices[stock_id] = {
-        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent }
+        stock_name: stock_api.company_name, latest_price: stock_api.latest_price.round(1), change_percent_s: stock_api.change_percent_s, change_percent: stock_api.change_percent
+      }
+    end
+    set_acquisitions
+    @data = {}
+    @stock_total_value.each do |stock_id, hash|
+      stock = Stock.find stock_id
+      @data[stock.name] = hash[:total_money_value]
     end
   end
 
@@ -54,7 +62,6 @@ class PagesController < ApplicationController
       endpoint: 'https://cloud.iexapis.com/v1'
     )
   end
-
 
   def set_acquisitions
     @acquisitions = current_user.acquisitions

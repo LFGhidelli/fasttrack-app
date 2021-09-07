@@ -50,7 +50,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin:0;
+  margin: 0;
 }
 
 .btn-ghost:hover {
@@ -60,9 +60,33 @@
   background-color: white;
 }
 
-.button-div-custom{
+.button-div-custom {
   display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:10px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.homepage-banner {
+  color: white;
+  border: 1px solid #4a4a4a;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  background-color: #13121e;
+  border-color: black;
+  margin-top: 10px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.homepage-banner:hover {
+  opacity: 1;
+  border-color: black;
+  color: black;
+  background-color: white;
 }
