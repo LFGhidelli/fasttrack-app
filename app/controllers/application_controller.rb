@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
   #   devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   # end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   def set_client
     @client = IEX::Api::Client.new(
       publishable_token: ENV['IEX_API_PUBLISHABLE_TOKEN'],
