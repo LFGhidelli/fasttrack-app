@@ -56,7 +56,7 @@
               <% net_percent = (net/value[:total_money_value])*100 %>
               <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-up"></i></p>
               <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Gain: <%= value[:market_percentage_change]*100.round%>%</p>
+              <p>24HR Gain: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
             </div>
           <% else %>
             <div class="overview-neg-box">
@@ -64,7 +64,7 @@
               <% net_percent = (net/value[:total_money_value])*100 %>
               <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-down"></i></p>
               <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Loss: <%= value[:market_percentage_change]*100.round%>%</p>
+              <p>24HR Loss: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
             </div>
           <% end %>
         <% end %>
@@ -78,7 +78,7 @@
 
 
 <%# MODAL %>
-
+<% raise %>
 
 <div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
   aria-hidden="true">
@@ -113,4 +113,5 @@
 <% @client.chart('AAPL').each do |d| %>
 <%= testhash[d.date] = d.close %>
 <% end %>
+
 <%= line_chart(testhash) %>

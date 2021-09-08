@@ -11,7 +11,7 @@ class AcquisitionsController < ApplicationController
     # authorize @stock
     # authorize @acquisition
     if @acquisition.save
-      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'your acquisition has been sent!'
+      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'Buy Acquisition Added.'
     else
       render :new
     end
@@ -33,7 +33,7 @@ class AcquisitionsController < ApplicationController
     # authorize @stock
     # authorize @acquisition
     if @acquisition.save
-      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'your sell request has been sent!'
+      redirect_to portfolio_path(@acquisition.id, @acquisition.stock_id), notice: 'Sell Acquisition Added.'
     else
       render portfolio_path
     end
