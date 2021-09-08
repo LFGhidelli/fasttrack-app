@@ -60,6 +60,10 @@
   background-color: white;
 }
 
+.btn-ghost:focus {
+  outline: none;
+}
+
 .button-div-custom {
   display: flex;
   justify-content: center;
@@ -89,4 +93,8 @@
   border-color: black;
   color: black;
   background-color: white;
+}
+
+button:focus {
+  outline: none;
 }

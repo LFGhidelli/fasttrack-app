@@ -1,30 +1,34 @@
 <body class="table_body">
   <div class="portfolio-title">
-    <h3 class="m-0 pt-3 d-flex justify-content-center">Portfolio</h3>
-    <div class="subtitle d-flex justify-content-center">
-      <h5 class="total-portfolio mr-3"><%= number_to_currency(@total_market_value.round(1)) %></h5>
-      <% if @net_percent > 0 %>
-      <h5 class="port-total-percentage-prof"><%= @net_percent.round(1) %>%</h5>
-      <% else %>
-      <h5 class="port-total-percentage-loss"><%= @net_percent.round(1) %>%</h5>
-      <% end %>
+    <% if @net_percent > 0 %>
+    <div class="subtitle">
+      <h5 class="total-portfolio m-2"><%= number_to_currency(@total_market_value.round(1)) %></h5>
+      <h5 class="fs-percent-pos text-white"><%= @net_percent.round(1) %>%</h5>
+      <h5 class="fs-percent-pos text-white"><%= number_to_currency(@total_market_value-@total_paid_value) %></h5>
     </div>
-    <div class="button-div-custom">
-      <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal">
-        Buy stock
-      </button>
-      <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#sellModal">
-        sell stock
-      </button>
-      <%= render "sell" %>
+    <% else %>
+    <div class="subtitle-neg">
+      <h5 class="total-portfolio m-2"><%= number_to_currency(@total_market_value.round(1)) %></h5>
+      <h5 class="fs-percent-neg text-white"><%= @net_percent.round(1) %>%</h5>
+      <h5 class="fs-percent-neg text-white"><%= number_to_currency(@total_market_value-@total_paid_value) %></h5>
     </div>
+    <% end %>
+  </div>
+  <div class="button-div-custom">
+    <button type="button" class="noam-button" data-toggle="modal" data-target="#exampleModal">
+      BUY STOCK
+    </button>
+    <button type="button" class="noam-button noam-button-neg" data-toggle="modal" data-target="#sellModal">
+      SELL STOCK
+    </button>
+    <%= render "sell" %>
   </div>
   <table class="table-fill">
     <thead>
       <tr class="all-titles">
         <th class="port-table-title">Stock</th>
         <th class="port-table-title">Amount</th>
-        <th class="port-table-title">invested</th>
+        <th class="port-table-title">Invested</th>
         <th class="port-table-title">P/L($)</th>
         <th class="port-table-title">P/L(%)</th>
         <th class="port-table-title">Current Value</th>
@@ -34,6 +38,7 @@
     <tbody class="table-hover">
       <% @stock_total_value.each do |key, value| %>
       <tr>
+
         <td class="text-left"><%= Stock.find(key).name %></td>
         <td class="text-left"><%= value[:total_stock_count] %></td>
         <td class="text-left"><%= number_to_currency(value[:total_money_value]) %></td>
@@ -51,7 +56,6 @@
 
         <td><a href="#" id="show_<%=key%>" class="show-extra down-arrow" data-id="<%=key%>">▼</a></td>
       </tr>
-
       <% avg_price = value[:total_money_value]/value[:total_stock_count] %>
       <% current_price = value[:market_value]/value[:total_stock_count] %>
       <tr class="expanded-row">
@@ -65,6 +69,7 @@
     </tbody>
   </table>
 </body>
+
 
 <%# VICTOR'S WORK %>
 

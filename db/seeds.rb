@@ -30,37 +30,36 @@ jean = User.create!(email: 'jean@gmail.com', password: '123456')
 
 puts "Creating Stock"
 
-tsla = Stock.create!(ticker: 'TSLA', name: 'Tesla'),
-amazon = Stock.create!(ticker: 'AMZN', name: 'Amazon'),
-googl = Stock.create!(ticker: 'GOOGL', name: 'Google'),
-facebook = Stock.create!(ticker: 'FB', name: 'Facebook'),
-mcdonalds = Stock.create!(ticker: 'MCD', name: 'McDonalds'),
-ford = Stock.create!(ticker: 'FORD', name: 'Ford'),
-gamestop = Stock.create!(ticker: 'GMC', name: 'Game Stop'),
-netflix = Stock.create!(ticker: 'NFLX', name: 'Netflix'),
+tsla = Stock.create!(ticker: 'TSLA', name: 'Tesla')
+amazon = Stock.create!(ticker: 'AMZN', name: 'Amazon')
+googl = Stock.create!(ticker: 'GOOGL', name: 'Google')
+facebook = Stock.create!(ticker: 'FB', name: 'Facebook')
+mcdonalds = Stock.create!(ticker: 'MCD', name: 'McDonalds')
+ford = Stock.create!(ticker: 'FORD', name: 'Ford')
+netflix = Stock.create!(ticker: 'NFLX', name: 'Netflix')
 microsoft = Stock.create!(ticker: 'MSFT', name: 'Microsoft')
 uber = Stock.create!(ticker: 'UBER', name: 'Uber')
 
-
 users = [luis, victor, noam, jean]
-stocks = [tsla, amazon, googl, facebook, mcdonalds, ford, gamestop, netflix, microsoft, uber]
-
-puts "Creating Stock Day Info"
-
-10.times do
-  stock = stocks[rand(1...10)]
-  StockDayInfo.create!(stock: stock, latest_price: rand(1..100))
-end
+stocks = [tsla, amazon, googl, facebook, mcdonalds, ford, netflix, microsoft, uber]
 
 puts "Creating Followed Stocks"
 
-10.times do
-  FollowedStock.create(stock: stocks[rand(1...10)], user: users.sample)
+5.times do
+  FollowedStock.create(stock: stocks[rand(1...9)], user: users.sample)
   puts "ok"
 end
 
 puts "Creating Acquisitions"
-
-10.times do
-  Acquisition.create!(stock: stocks[rand(1...10)], user: users[rand(1...4)], date_bought: Faker::Date.in_date_period, amount_bought: rand(1..100), value_bought: rand(10..100))
-end
+Acquisition.create!(stock: tsla, user: victor, date_bought: Date.today, amount_bought: 10, value_bought: 700)
+Acquisition.create!(stock: facebook, user: victor, date_bought: Date.today, amount_bought: 5, value_bought: 400)
+Acquisition.create!(stock: googl, user: victor, date_bought: Date.today, amount_bought: 2, value_bought: 2500)
+Acquisition.create!(stock: tsla, user: luis, date_bought: Date.today, amount_bought: 10, value_bought: 700)
+Acquisition.create!(stock: facebook, user: luis, date_bought: Date.today, amount_bought: 5, value_bought: 400)
+Acquisition.create!(stock: googl, user: luis, date_bought: Date.today, amount_bought: 2, value_bought: 2500)
+Acquisition.create!(stock: tsla, user: noam, date_bought: Date.today, amount_bought: 10, value_bought: 700)
+Acquisition.create!(stock: facebook, user: noam, date_bought: Date.today, amount_bought: 5, value_bought: 400)
+Acquisition.create!(stock: googl, user: noam, date_bought: Date.today, amount_bought: 2, value_bought: 2500)
+Acquisition.create!(stock: tsla, user: jean, date_bought: Date.today, amount_bought: 10, value_bought: 700)
+Acquisition.create!(stock: facebook, user: jean, date_bought: Date.today, amount_bought: 5, value_bought: 400)
+Acquisition.create!(stock: googl, user: jean, date_bought: Date.today, amount_bought: 2, value_bought: 2500)

@@ -54,17 +54,17 @@
             <div class="overview-pos-box">
               <% net = value[:market_value]-value[:total_money_value] %>
               <% net_percent = (net/value[:total_money_value])*100 %>
-              <p class="overview-stock-title"><%= Stock.find(key).name %></p>
+              <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-up"></i></p>
               <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Gain: <%= value[:market_percentage_change]*100.round(2)%>%</p>
+              <p>24HR Gain: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
             </div>
           <% else %>
             <div class="overview-neg-box">
               <% net = value[:market_value]-value[:total_money_value] %>
               <% net_percent = (net/value[:total_money_value])*100 %>
-              <p class="overview-stock-title"><%= Stock.find(key).name %></p>
+              <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-down"></i></p>
               <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Loss: <%= value[:market_percentage_change]*100.round(2)%>%</p>
+              <p>24HR Loss: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
             </div>
           <% end %>
         <% end %>
@@ -78,7 +78,7 @@
 
 
 <%# MODAL %>
-
+<% raise %>
 
 <div class="modal fade" id="followmodal" tabindex="-1" role="dialog" aria-labelledby="followmodalLabel"
   aria-hidden="true">
@@ -110,3 +110,4 @@
   colors: ['#3E92CC', '#2A628F', '#13293D','#16324F','#18435A'],
   donut: true,
   legend: "bottom")%>
+
