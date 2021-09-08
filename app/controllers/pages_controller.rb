@@ -48,7 +48,7 @@ class PagesController < ApplicationController
     set_acquisitions
     @data = {}
     @stock_total_value.each do |stock_id, hash|
-      stock = Stock.find stock_id
+      stock = Stock.find(stock_id)
       @data[stock.name] = hash[:total_money_value]
     end
   end

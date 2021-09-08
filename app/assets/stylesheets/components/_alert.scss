@@ -3,4 +3,17 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  border-radius: 40px;
+}
+
+.custom-alert-info{
+  background-color: #13121E;
+  color: white;
+  border-radius: 40px;
+}
+
+.custom-alert-warning {
+  background-color: #412020;
+  color: white;
+  border-radius: 40px;
 }
