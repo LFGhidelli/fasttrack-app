@@ -38,6 +38,7 @@
     <tbody class="table-hover">
       <% @stock_total_value.each do |key, value| %>
       <tr>
+
         <td class="text-left"><%= Stock.find(key).name %></td>
         <td class="text-left"><%= value[:total_stock_count] %></td>
         <td class="text-left"><%= number_to_currency(value[:total_money_value]) %></td>
@@ -55,7 +56,6 @@
 
         <td><a href="#" id="show_<%=key%>" class="show-extra down-arrow" data-id="<%=key%>">▼</a></td>
       </tr>
-
       <% avg_price = value[:total_money_value]/value[:total_stock_count] %>
       <% current_price = value[:market_value]/value[:total_stock_count] %>
       <tr class="expanded-row">
