@@ -10,12 +10,10 @@ require("channels")
 
 import { initSelect2 } from '../components/init_select2';
 import { collapseTable } from '../components/table_collapse';
-import { navbar } from '../components/navbar';
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
   collapseTable();
-  navbar();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference

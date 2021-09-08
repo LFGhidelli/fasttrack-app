@@ -62,6 +62,11 @@
         <td colspan="5" id="extra_<%=key%>" class="d-none">
           <span>You paid an average of <b><%= number_to_currency(avg_price) %></b> per stock.</span><br>
           <span>The current market price is <b><%= number_to_currency(current_price) %></b> per stock.</span>
+          <% charthash = {} %>
+          <% @client.chart(Stock.find(key).ticker).each do |d| %>
+            <% charthash[d.date] = d.close %>
+          <% end %>
+          <%= line_chart(charthash) %>
         </td>
       </tr>
 
