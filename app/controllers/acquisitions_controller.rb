@@ -25,6 +25,7 @@ class AcquisitionsController < ApplicationController
 
   def sell_acquisition
     set_client
+    set_acquisitions
     @acquisition = Acquisition.new(acquisition_params)
     @acquisition.user = current_user
     @acquisition.value_bought = -@client.quote(@acquisition.stock.ticker).latest_price

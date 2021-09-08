@@ -108,3 +108,9 @@
 <%= pie_chart(@data ,
 
   colors: ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'])%>
+
+<% testhash = {} %>
+<% @client.chart('AAPL').each do |d| %>
+<%= testhash[d.date] = d.close %>
+<% end %>
+<%= line_chart(testhash) %>
