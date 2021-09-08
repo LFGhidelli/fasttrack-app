@@ -18,7 +18,7 @@
   <div class="cards-ft">
       <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),6) %>
       <% news.each do |n| %>
-      <div class="card" style="width: 18rem;">
+      <div class="card all-cards" style="width: 22rem;">
         <img class="article-img" src="<%= n.image %>" alt="">
         <div class="card-body">
           <h5 class="card-title"><%= n.headline %></h5>
