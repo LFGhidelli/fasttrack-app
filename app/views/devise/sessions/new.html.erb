@@ -1,4 +1,4 @@
-<div class="container pt-5 button-change form-box border">
+<div class="container button-change form-box p-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-6 col-lg-4">
       <h2 class="text-center mb-5">Log in</h2>
@@ -7,9 +7,11 @@
         <%= f.input :email,
                           required: false,
                           autofocus: true,
+                          placeholder: "Type your email",
                           input_html: { autocomplete: "email" } %>
         <%= f.input :password,
                           required: false,
+                          placeholder: "Type your password",
                           input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
