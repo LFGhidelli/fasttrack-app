@@ -1,4 +1,2 @@
 Chartkick.options = {
-  name: "Distribution"
-  label: "Distribution"
-}
+  name: "Distribution", label: "Distribution" }
