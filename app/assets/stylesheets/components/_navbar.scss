@@ -1,10 +1,9 @@
-
 :root {
   --sidebar-email: #14121E;
   --sidebar-texts: #14121E;
   --dk-darker-bg: #434343;
-  --navbar-bg-color: #F6F4F5;
-  --sidebar-bg-color: #F6F4F5;
+  --navbar-bg-color: #00000000;
+  --sidebar-bg-color: #f1eee9;
   --sidebar-width: 280px;
 }
 
@@ -12,12 +11,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: .925rem;
-  background: #FFFFFF;
 }
 
 #wrapper {

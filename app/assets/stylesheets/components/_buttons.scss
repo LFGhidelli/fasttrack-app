@@ -17,8 +17,7 @@
 }
 
 .btn-search {
-  background-color: #14121e;
-  opacity: 0.7;
+  background-color: #026670;
   transition: 0.5s;
   height: 38px;
   width: 38px;
@@ -26,7 +25,7 @@
 }
 
 .btn-search:hover {
-  opacity: 1;
+  transform: scale(1.2);
 }
 
 .btn-search i {
@@ -43,8 +42,8 @@
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  background-color: #13121e;
-  border-color: black;
+  background-color: #026670;
+  border-color: #9FEDD7;
   margin-top: 10px;
   transition: 0.3s;
   display: flex;

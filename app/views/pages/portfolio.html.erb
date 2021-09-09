@@ -1,10 +1,14 @@
 <body class="table_body">
   <div class="portfolio-title">
     <% if @net_percent > 0 %>
-    <div class="subtitle">
-      <h5 class="total-portfolio m-2"><%= number_to_currency(@total_market_value.round(1)) %></h5>
-      <h5 class="fs-percent-pos text-white"><%= @net_percent.round(1) %>%</h5>
-      <h5 class="fs-percent-pos text-white"><%= number_to_currency(@total_market_value-@total_paid_value) %></h5>
+    <div class="subtitle d-flex flex-column align-items-center">
+      <div class = "total-profit">
+        <h5 class="total-portfolio m-2"><%= number_to_currency(@total_market_value.round(1)) %></h5>
+      </div>
+      <div class = "profits-lose d-flex">
+        <h5 class="fs-percent-pos text-white">+<%= number_to_currency(@total_market_value-@total_paid_value) %></h5>
+        <h5 class="fs-percent-pos text-white"><%= @net_percent.round(1) %>%</h5>
+      </div>
     </div>
     <% else %>
     <div class="subtitle-neg">
@@ -16,10 +20,10 @@
   </div>
   <div class="button-div-custom">
     <button type="button" class="noam-button" data-toggle="modal" data-target="#exampleModal">
-      BUY STOCK
+      ADD STOCK
     </button>
     <button type="button" class="noam-button noam-button-neg" data-toggle="modal" data-target="#sellModal">
-      SELL STOCK
+      REMOVE STOCK
     </button>
     <%= render "sell" %>
   </div>
