@@ -1,42 +1,42 @@
-<div class="container">
-  <div class="d-flex justify-content-center m-3">
-    <h1>News</h1>
-  </div>
+<div class="news-container">
+    <div class="d-flex justify-content-center m-3">
+      <h1>News</h1>
+    </div>
 
 
-  <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
-  <div class="search-form-control form-group d-flex justify-content-center">
-    <select class="form-control string required w-50" type="text" value="<%= params.dig(:search, :query) %>"
-      name="search[query]" id="search_query" placeholder="Type a ticker">
-      <option value="NFLX">Netflix</option>
-      <option value="AAPL">Aaple</option>
-      <option value="TSLA">Tesla</option>
-      <option value="MSFT">Microsoft</option>
-      <option value="AMZN">Amazon</option>
-      <option value="MCD">McDonald's</option>
-      <option value="UBER">Uber</option>
-      <option value="FORD">Ford</option>
-      <option value="FB">Facebook</option>
-      <option value="GOOGL">Google</option>
-      </select>
-    <button name="button" type="submit" class="btn btn-primary button-articles">
-      <i class="fas fa-search"></i> Search
-    </button>
-  </div>
-  <% end %>
-
-
-  <div class="cards-ft">
-    <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),6) %>
-    <% news.each do |n| %>
-    <div class="card all-cards" style="width: 22rem;">
-      <img class="article-img" src="<%= n.image %>" alt="">
-      <div class="card-body">
-        <h5 class="card-title"><%= n.headline %></h5>
-        <%# <p class="card-text"><%= n.summary %></p>
-      </div>
-      <%= link_to("Read more", n.url, class: "btn btn-primary article-btn") %>
+    <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
+    <div class="search-form-control form-group d-flex justify-content-center">
+      <select class="form-control string required w-50" type="text" value="<%= params.dig(:search, :query) %>"
+        name="search[query]" id="search_query" placeholder="Type a ticker">
+        <option value="NFLX">Netflix</option>
+        <option value="AAPL">Aaple</option>
+        <option value="TSLA">Tesla</option>
+        <option value="MSFT">Microsoft</option>
+        <option value="AMZN">Amazon</option>
+        <option value="MCD">McDonald's</option>
+        <option value="UBER">Uber</option>
+        <option value="FORD">Ford</option>
+        <option value="FB">Facebook</option>
+        <option value="GOOGL">Google</option>
+        </select>
+      <button name="button" type="submit" class="btn btn-primary button-search">
+        <i class="fas fa-search"></i> Search
+      </button>
     </div>
     <% end %>
-  </div>
+
+
+    <div class="cards-ft">
+      <% news = params.dig(:search, :query).nil? ? [] : @client.news(params.dig(:search, :query),6) %>
+      <% news.each do |n| %>
+      <div class="card all-cards" style="width: 22rem;">
+        <img class="article-img" src="<%= n.image %>" alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= n.headline %></h5>
+          <%# <p class="card-text"><%= n.summary %></p>
+        </div>
+        <%= link_to("Read more", n.url, class: "btn btn-primary article-btn") %>
+      </div>
+      <% end %>
+    </div>
 </div>

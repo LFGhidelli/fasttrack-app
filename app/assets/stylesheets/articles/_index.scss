@@ -15,6 +15,10 @@ h1 {
   color: rgb(65, 65, 65);
 }
 
+.news-container {
+  background-color: #EBEAE4;
+}
+
 .search-form-control .form-control {
   height: 3.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -22,9 +26,11 @@ h1 {
 }
 
 .article-img {
-  width: 342px;
+  width: 354px;
   height: 208px;
   border-radius: 15px 15px 0px 0px;
+  padding: 1px;
+
 }
 
 .cards-ft {
@@ -34,8 +40,10 @@ h1 {
 }
 
 .all-cards {
-  border-radius: 15px;
-  border-width: thick;
+  border-radius: 19px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border: none;
 }
 
 .article-btn {
@@ -44,4 +52,23 @@ h1 {
   text-align: center;
   display: flex;
   justify-content: center;
+  background-color: #026670;
+  font-weight: bold;
+  border-style: none;
+}
+
+.article-btn:hover {
+  opacity: 0.6;
+  background-color: #026670;
+}
+
+.button-search {
+  border-radius: 6px;
+  background-color: #026670;
+  font-weight: bold;
+}
+
+.button-search:hover {
+  opacity: 0.6;
+  background-color: #026670;
 }
