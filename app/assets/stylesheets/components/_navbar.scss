@@ -1,6 +1,6 @@
 :root {
-  --sidebar-email: white;
-  --sidebar-texts:white;
+  --sidebar-email: rgb(0, 0, 0);
+  --sidebar-texts: black;
   --dk-darker-bg: #434343;
   --navbar-bg-color: #00000000;
   --sidebar-bg-color: #f1eee9;
@@ -17,7 +17,7 @@
   margin-left: var(--sidebar-width);
 }
 
-#guest-wrapper{
+#guest-wrapper {
   margin-left: none;
 }
 
@@ -28,7 +28,7 @@
 .sidebar {
   background-color: var(--sidebar-bg-color);
   width: var(--sidebar-width);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transform: translateX(0);
   z-index: 9999999;
 }
@@ -38,33 +38,33 @@
   top: 7px;
   right: 7px;
   cursor: pointer;
-  color: #EEE;
+  color: #39a4a6;
 }
 
 .sidebar .sidebar-header {
-  border-bottom: 1px solid #2a2b3c
+  border-bottom: 1px solid #2a2b3c;
 }
 
 .sidebar .sidebar-header h5 a {
-  color: var(--sidebar-email)
+  color: var(--sidebar-email);
 }
 
 .sidebar .sidebar-header p {
   color: var(--sidebar-texts);
-  font-size: .825rem;
+  font-size: 0.825rem;
 }
 
-.sidebar .search .form-control~i {
-  color: #EEE;
+.sidebar .search .form-control ~ i {
+  color: #39a4a6;
   right: 40px;
   top: 22px;
 }
 
-.sidebar>ul>li {
-  padding: .7rem 1.75rem;
+.sidebar > ul > li {
+  padding: 0.7rem 1.75rem;
 }
 
-.sidebar ul>li>a {
+.sidebar ul > li > a {
   color: var(--sidebar-texts);
   text-decoration: none;
 }
@@ -89,5 +89,5 @@
   flex-grow: 0;
 }
 .navbar .navbar-brand {
-  color: white !important
+  color: #39a4a6 !important;
 }

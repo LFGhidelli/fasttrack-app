@@ -36,8 +36,7 @@
   justify-content: center;
 }
 
-
-.btn-homepage-custom{
+.btn-homepage-custom {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,7 +51,7 @@
   border-radius: 40px;
 }
 
-.btn-homepage-custom:hover{
+.btn-homepage-custom:hover {
   background-color: #036570c5;
   color: rgba(255, 255, 255, 0.897);
   box-shadow: 3px 3px #88888827;
@@ -64,11 +63,10 @@
   transform: translateY(4px);
 }
 
-
-.button-homepage-container{
+.button-homepage-container {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-ghost {
@@ -78,7 +76,7 @@
   font-weight: lighter;
   transition: opacity 0.3s ease;
   background-color: #026670;
-  border-color: #9FEDD7;
+  border-color: #9fedd7;
   margin-top: 10px;
   transition: 0.3s;
   display: flex;
