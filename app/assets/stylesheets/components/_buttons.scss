@@ -36,9 +36,43 @@
   justify-content: center;
 }
 
-.btn-ghost {
+
+.btn-homepage-custom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  border: 1px solid #4a4a4a;
+  text-shadow: 2px 2px 2px #88888810;
+  font-size: 20px;
+  background-color: #036670;
+  font-weight: 600;
+  box-shadow: 3px 3px #88888810;
+  width: 300px;
+  height: 70px;
+  border-radius: 40px;
+}
+
+.btn-homepage-custom:hover{
+  background-color: #036570c5;
+  color: rgba(255, 255, 255, 0.897);
+  box-shadow: 3px 3px #88888827;
+}
+
+.btn-homepage-custom:active {
+  background-color: #036570c5;
+  color: rgba(255, 255, 255, 0.897);
+  transform: translateY(4px);
+}
+
+
+.button-homepage-container{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-ghost {
+  color: black;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
