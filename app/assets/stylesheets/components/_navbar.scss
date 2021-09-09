@@ -1,4 +1,5 @@
 
+
 :root {
   --sidebar-email: white;
   --sidebar-texts:white;
@@ -62,7 +63,7 @@ body {
 }
 
 .sidebar .search .form-control~i {
-  color: #2b2f3a;
+  color: #EEE;
   right: 40px;
   top: 22px;
 }
@@ -96,5 +97,5 @@ body {
   flex-grow: 0;
 }
 .navbar .navbar-brand {
-  color: rgb(44, 44, 44) !important
+  color: white !important
 }
