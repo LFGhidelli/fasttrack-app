@@ -3,19 +3,19 @@
     <div class="followedstock-container">
 
       <% @stock_market_prices.first(5).each do |key, value| %>
-        <div class="followedstock-box">
-          <p class="fs-name"><%= value[:stock_name] %></p>
-          <div class="d-flex">
-            <p class="fs-price"><%= number_to_currency(value[:latest_price]) %></p>
+      <div class="followedstock-box">
+        <p class="fs-name"><%= value[:stock_name] %></p>
+        <div class="d-flex">
+          <p class="fs-price"><%= number_to_currency(value[:latest_price]) %></p>
 
-            <% if value[:change_percent] > 0 %>
-              <p class="fs-percent-pos"><%= value[:change_percent_s] %></p>
-            <% else %>
-              <p class="fs-percent-neg"><%= value[:change_percent_s] %></p>
-            <% end %>
+          <% if value[:change_percent] > 0 %>
+          <p class="fs-percent-pos"><%= value[:change_percent_s] %></p>
+          <% else %>
+          <p class="fs-percent-neg"><%= value[:change_percent_s] %></p>
+          <% end %>
 
-          </div>
         </div>
+      </div>
       <% end %>
 
       <% if @stock_market_prices.count < 5 %>
@@ -50,25 +50,31 @@
       <h2>Portfolio Overview</h2>
       <div class="row d-flex justify-content-center">
         <% @stock_total_value.each do |key, value| %>
-          <% if value[:market_percentage_change] > 0 %>
-            <div class="overview-pos-box">
-              <% net = value[:market_value]-value[:total_money_value] %>
-              <% net_percent = (net/value[:total_money_value])*100 %>
-              <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-up"></i></p>
-              <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Gain: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
-            </div>
-          <% else %>
-            <div class="overview-neg-box">
-              <% net = value[:market_value]-value[:total_money_value] %>
-              <% net_percent = (net/value[:total_money_value])*100 %>
-              <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-down"></i></p>
-              <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
-              <p>24HR Loss: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
-            </div>
-          <% end %>
+        <% if value[:market_percentage_change] > 0 %>
+        <div class="overview-pos-box">
+          <% net = value[:market_value]-value[:total_money_value] %>
+          <% net_percent = (net/value[:total_money_value])*100 %>
+          <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-up"></i></p>
+          <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
+          <p>24HR Gain: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
+        </div>
+        <% else %>
+        <div class="overview-neg-box">
+          <% net = value[:market_value]-value[:total_money_value] %>
+          <% net_percent = (net/value[:total_money_value])*100 %>
+          <p class="overview-stock-title"><%= Stock.find(key).name %> <i class="fas fa-arrow-down"></i></p>
+          <p>Current Value: <%= number_to_currency(value[:total_money_value]) %></p>
+          <p>24HR Loss: <%= (value[:market_percentage_change]*100).round(2)%>%</p>
+        </div>
+        <% end %>
         <% end %>
       </div>
+
+      <%= pie_chart(@data ,
+        colors: ['#026670', '#9FEDD7', '#FEF9C7','#FCE181','#EDEAE5'],
+        donut: true,
+        label: "Distribution",
+        legend: "top")%>
     </div>
   </div>
 </div>
@@ -103,9 +109,3 @@
     </div>
   </div>
 </div>
-
-
-<%= pie_chart(@data ,
-  colors: ['#3E92CC', '#2A628F', '#13293D','#16324F','#18435A'],
-  donut: true,
-  legend: "bottom")%>

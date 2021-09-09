@@ -1,3 +1,4 @@
 Chartkick.options = {
-  height: "500px"
+  name: "Distribution"
+  label: "Distribution"
 }
