@@ -1,7 +1,9 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && !current_page?(controller: "pages", action: "home") %>
   <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
   <div class="d-flex justify-content-center mt-3 mb-1">
-  <img class= "logo" src="https://i.ibb.co/3YVf4BV/logo-blue.png" alt="FastTrack Logo" width="60" height="60">
+  <%= link_to root_path do  %>
+    <img class= "logo" src="https://i.ibb.co/3YVf4BV/logo-blue.png" alt="FastTrack Logo" width="60" height="60">
+  <% end %>
   </div>
     <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
       <img class="rounded-pill img-fluid" width="65"
@@ -45,7 +47,9 @@
     <section id="guest-wrapper">
       <nav class="navbar">
         <div class="container-fluid">
-          <img src="https://i.ibb.co/0FkHCKJ/logo-blue-2.png" alt="FastTrack Logo" width="120">
+          <%= link_to root_path do  %>
+            <img src="https://i.ibb.co/0FkHCKJ/logo-blue-2.png" alt="FastTrack Logo" width="120">
+          <% end %>
           <div class="guest-navbar">
             <%= link_to "Login", new_user_session_path, class:"login-button"%>
           </div>
