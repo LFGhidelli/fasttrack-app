@@ -9,14 +9,10 @@
 .cards {
   display: flex;
   flex-direction: column;
-  border: solid;
-  border-width: 1px;
   height: 300px;
   width: 300px;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
 }
 
 .text_card {
@@ -31,7 +27,7 @@
 }
 
 .cards_img_1st {
-  height: 150px;
+  height: 250px;
   margin-top: 26px;
 }
 
@@ -40,7 +36,7 @@
 }
 
 .cards_img_2nd {
-  height: 145px;
+  height: 320px;
 }
 
 .text_second_card {
