@@ -45,10 +45,18 @@ stocks = [tsla, amazon, googl, facebook, mcdonalds, ford, netflix, microsoft, ub
 
 puts "Creating Followed Stocks"
 
-5.times do
-  FollowedStock.create(stock: stocks[rand(1...9)], user: users.sample)
-  puts "ok"
-end
+FollowedStock.create(stock: googl, user: victor)
+FollowedStock.create(stock: googl, user: luis)
+FollowedStock.create(stock: googl, user: noam)
+FollowedStock.create(stock: googl, user: jean)
+FollowedStock.create(stock: amazon, user: victor)
+FollowedStock.create(stock: amazon, user: luis)
+FollowedStock.create(stock: amazon, user: noam)
+FollowedStock.create(stock: amazon, user: jean)
+FollowedStock.create(stock: microsoft, user: victor)
+FollowedStock.create(stock: microsoft, user: luis)
+FollowedStock.create(stock: microsoft, user: noam)
+FollowedStock.create(stock: microsoft, user: jean)
 
 puts "Creating Acquisitions"
 Acquisition.create!(stock: tsla, user: victor, date_bought: Date.today, amount_bought: 10, value_bought: 700)
