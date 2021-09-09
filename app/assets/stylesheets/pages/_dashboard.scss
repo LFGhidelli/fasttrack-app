@@ -63,10 +63,10 @@
 }
 
 .follow-stock-plus{
-	background: none;
-	color: white;
-	border: none;
-	padding: 0;
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
   font-size: 44px;
 }
 
@@ -76,8 +76,11 @@
 
 
 .total-assets-box {
-  background: rgb(37,143,189);
-  background: linear-gradient(90deg, rgba(37,143,189,1) 0%, rgba(137,100,214,1) 26%, rgba(180,94,177,1) 53%, rgba(204,110,144,1) 72%, rgba(213,125,89,1) 100%);
+  backdrop-filter: blur(6px) saturate(63%);
+  -webkit-backdrop-filter: blur(6px) saturate(63%);
+  background-color: rgba(167, 176, 184, 0.0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
   color: white;
   display: flex;
   flex-grow: 1;
