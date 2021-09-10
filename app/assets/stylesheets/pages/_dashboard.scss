@@ -3,7 +3,7 @@
 }
 
 .followedstock-box{
-  background-color: #14121E;
+  background-color: #036670;
   color: white;
   display: flex;
   justify-content: center;
@@ -48,7 +48,7 @@
 }
 
 .add-followedstock-box {
-  background-color: #14121E;
+  background-color: #036670;
   color: white;
   display: flex;
   justify-content: center;
@@ -63,10 +63,10 @@
 }
 
 .follow-stock-plus{
-	background: none;
-	color: white;
-	border: none;
-	padding: 0;
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
   font-size: 44px;
 }
 
@@ -76,8 +76,7 @@
 
 
 .total-assets-box {
-  background: rgb(37,143,189);
-  background: linear-gradient(90deg, rgba(37,143,189,1) 0%, rgba(137,100,214,1) 26%, rgba(180,94,177,1) 53%, rgba(204,110,144,1) 72%, rgba(213,125,89,1) 100%);
+  background-color: #026670;
   color: white;
   display: flex;
   flex-grow: 1;
@@ -127,11 +126,11 @@
 }
 
 .more-box {
-  background: rgb(37, 143, 189);
-  background: linear-gradient(90deg, rgba(37, 143, 189, 1) 0%, rgba(137, 100, 214, 1) 26%, rgba(180, 94, 177, 1) 53%, rgba(204, 110, 144, 1) 72%, rgba(213, 125, 89, 1) 100%);
+  background-color: #F0EEEA;
+  border: 4px solid #036670;
   display: flex;
   flex-grow: 1;
-  color: white;
+  color: #036670;
   align-items: center;
   justify-content:center;
   flex-direction: column;
@@ -145,13 +144,12 @@
   }
   h2 {
     margin: 0;
-
   }
 }
 
 .overview-pos-box {
   background: rgba(132, 176, 130, 0.247);
-  color: white;
+  color: #036670;
   display: flex;
   justify-content: center;
   align-items: left;
@@ -164,8 +162,8 @@
 }
 
 .overview-neg-box {
-  background: rgba(209, 115, 115, 0.253);
-  color: white;
+  background: rgba(224, 99, 99, 0.253);
+  color: #036670;
   display: flex;
   justify-content: center;
   align-items: left;

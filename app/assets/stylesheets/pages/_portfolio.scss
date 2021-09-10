@@ -7,7 +7,7 @@
 }
 
 .total-portfolio {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: bold;
   color:rgb(65, 65, 65);
 }
@@ -93,7 +93,7 @@ tr:nth-child(odd) td {
 }
 
 tr:nth-child(odd):hover td {
-  background: #4E5066;
+  background: #026670;
 }
 
 tr:last-child td:first-child {
@@ -164,15 +164,15 @@ td.text-right {
 }
 
 .noam-button{
-  background-color: rgb(255, 255, 255);
   padding: 20px;
   padding-right: 100px;
   padding-left: 100px;
   font-size: 18px;
   color: rgb(46, 46, 46);
+  background: transparent;
   text-align: center;
   outline: none;
-  border: 3px solid rgb(119, 119, 119);
+  border: 3px solid black;
   transition: 0.5s;
   margin: 5px;
   border-radius: 10px;
@@ -209,7 +209,7 @@ td.text-right {
 
 .subtitle{
   background: rgb(179, 224, 176);
-  background: linear-gradient(0deg, rgba(179, 224, 176, 0.5340511204481793) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(179, 224, 176, 0.5340511204481793) 0%, rgba(255, 255, 255, 0) 100%);
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -218,7 +218,7 @@ td.text-right {
 
 .subtitle-neg {
   background: rgb(224, 176, 176);
-  background: linear-gradient(0deg, rgba(224, 176, 176, 0.5340511204481793) 0%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(180deg, rgba(224, 176, 176, 0.5340511204481793) 0%, rgba(255, 255, 255, 0) 100%);
   padding: 40px;
   display: flex;
   justify-content: center;

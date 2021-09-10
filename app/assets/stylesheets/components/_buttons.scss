@@ -1,10 +1,10 @@
 .login-button {
-  color: #9c9c9c;
+  color: #036670;
   font-size: 20px;
   font-weight: bold;
 }
 .login-button:hover {
-  color: #777777;
+  color: #08808d;
   font-size: 20px;
   font-weight: bold;
 }
@@ -17,8 +17,7 @@
 }
 
 .btn-search {
-  background-color: #14121e;
-  opacity: 0.7;
+  background-color: #026670;
   transition: 0.5s;
   height: 38px;
   width: 38px;
@@ -26,7 +25,7 @@
 }
 
 .btn-search:hover {
-  opacity: 1;
+  transform: scale(1.2);
 }
 
 .btn-search i {
@@ -36,15 +35,47 @@
   justify-content: center;
 }
 
-.btn-ghost {
+.btn-homepage-custom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
-  border: 1px solid #4a4a4a;
+  text-shadow: 2px 2px 2px #88888810;
+  font-size: 20px;
+  background-color: #036670;
+  font-weight: 600;
+  box-shadow: 3px 3px #88888810;
+  width: 300px;
+  height: 70px;
+  border-radius: 40px;
+}
+
+.btn-homepage-custom:hover {
+  background-color: #036570c5;
+  color: rgba(255, 255, 255, 0.897);
+  box-shadow: 3px 3px #88888827;
+}
+
+.btn-homepage-custom:active {
+  background-color: #036570c5;
+  color: rgba(255, 255, 255, 0.897);
+  transform: translateY(4px);
+}
+
+.button-homepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-ghost {
+  color: black;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   transition: opacity 0.3s ease;
-  background-color: #13121e;
-  border-color: black;
+  background-color: #026670;
+  border-color: #9fedd7;
   margin-top: 10px;
   transition: 0.3s;
   display: flex;
