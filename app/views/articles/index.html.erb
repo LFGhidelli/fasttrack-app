@@ -7,7 +7,8 @@
     <%= simple_form_for :search, url: articles_path, method: :get do |f| %>
     <div class="search-form-control form-group d-flex justify-content-center">
       <select class="form-control string required w-50" type="text" value="<%= params.dig(:search, :query) %>"
-        name="search[query]" id="search_query" placeholder="Type a ticker">
+        name="search[query]" id="search_query" >
+        <option value="" disabled selected hidden>Choose a stock</option>
         <option value="NFLX">Netflix</option>
         <option value="AAPL">Aaple</option>
         <option value="TSLA">Tesla</option>
